@@ -1,0 +1,241 @@
+Sno,Species,Specimen no,image ID,Genera,Habit,Origin,Diet
+1,Adelophis_foxi,LSUMZ73561,IMG_3526,Adelophis,Burrowing,American,annelids
+2,Adelophis_foxi,LSUMZMF-818,IMG_3533,Adelophis,Burrowing,American,annelids
+3,Adelophis_foxi,UMMZ128536,IMG_3516,Adelophis,Burrowing,American,annelids
+4,Afronatrix_anoscopus_2,1969.2265,IMG_4561,Afronatrix,Aquatic,African,aquatic gen
+5,Afronatrix_anoscopus_2,1969.2266,IMG_4560,Afronatrix,Aquatic,African,aquatic gen
+6,Amphiesma_beddomei,74.4.29.27,IMG_1662,Amphiesma,Terrestrial,Asian,anurans
+7,Amphiesma_beddomei,88.1.27.51,IMG_1664,Amphiesma,Terrestrial,Asian,anurans
+8,Amphiesma_beddomei,93.4.18.13,IMG_1668,Amphiesma,Terrestrial,Asian,anurans
+9,Amphiesma_monticola,64.10.4.2,IMG_1586,Amphiesma,Terrestrial,Asian,anurans
+10,Amphiesma_monticola,ZMB 6059,IMG_9954,Amphiesma,Terrestrial,Asian,anurans
+11,Amphiesma_stolatum_2,1905.3.25.87,IMG_9322,Amphiesma,Terrestrial,Asian,generalist
+12,Amphiesma_stolatum_2,88.1.27.46,IMG_9295,Amphiesma,Terrestrial,Asian,generalist
+13,Amphiesmoides_ornaticeps,FMNH,IMG_0741,Amphiesmoides,Semiaquatic,Asian,unknown
+14,Aspidura_ceylonensis,ZMB 3879,IMG_9984,Aspidura,Burrowing,Asian,annelids
+15,Aspidura_copei,ZMB 8375,IMG_0023,Aspidura,Burrowing,Asian,annelids
+16,Atretium_schistosum_2,111.22.1a.e,IMG_1722,Atretium,Aquatic,Asian,aquatic gen
+17,Atretium_schistosum_2,46.11.22.90,IMG_1719,Atretium,Aquatic,Asian,aquatic gen
+18,Blythia_reticulata,BNHS1738,IMG_3240,Blythia,Burrowing,Asian,annelids
+19,Blythia_reticulata,BNHS1743,IMG_3248,Blythia,Burrowing,Asian,annelids
+20,Clonophis_kirtlandii,AMNH122398,IMG_4543,Clonophis,Semiaquatic,American,aquatic gen
+21,Fowlea_asperrimus,1910.3.16.24,IMG_1855,Fowlea,Aquatic,Asian,aquatic gen
+22,Fowlea_asperrimus,1931.5.13.35,IMG_1851,Fowlea,Aquatic,Asian,aquatic gen
+23,Fowlea_asperrimus,1946.1.12.73,IMG_1892,Fowlea,Aquatic,Asian,aquatic gen
+24,Fowlea_flavipunctatus_1,1977.1928,IMG_9226,Fowlea,Aquatic,Asian,aquatic gen
+25,Fowlea_flavipunctatus_2,1983.186,IMG_9276,Fowlea,Aquatic,Asian,aquatic gen
+26,Fowlea_melanzostus,1920.1.20.453a,IMG_1842,Fowlea,Aquatic,Asian,aquatic gen
+27,Fowlea_melanzostus,94.3.24.10,IMG_2616,Fowlea,Aquatic,Asian,aquatic gen
+28,Fowlea_piscator_2,95.4.23.16,IMG_1837,Fowlea,Aquatic,Asian,aquatic gen
+29,Fowlea_piscator_2,72.4.7.393,IMG_1826,Fowlea,Aquatic,Asian,aquatic gen
+30,Fowlea_punctulatus,1946.1.13.59,IMG_1921,Fowlea,Aquatic,Asian,aquatic gen
+31,Fowlea_punctulatus,CAS211958,IMG_3665,Fowlea,Aquatic,Asian,unknown
+32,Fowlea_punctulatus,CAS215062,IMG_3681,Fowlea,Aquatic,Asian,unknown
+33,Fowlea_sanctijohannis,1907.12.16.5,IMG_1829,Fowlea,Aquatic,Asian,aquatic gen
+34,Fowlea_sanctijohannis,1946.1.13.61,IMG_1881,Fowlea,Aquatic,Asian,aquatic gen
+35,Fowlea_sanctijohannis,91.9.14.15,IMG_1843,Fowlea,Aquatic,Asian,aquatic gen
+36,Fowlea_tytleri,1940.3.7.5,IMG_1864,Fowlea,Aquatic,Asian,aquatic gen
+37,Fowlea_yunnanensis,ZSI4191,IMG_3412,Atretium,Aquatic,Asian,unknown
+38,Fowlea_yunnanensis,ZSI4192,IMG_3419,Atretium,Aquatic,Asian,unknown
+39,Haldea_striatula,1931.3.29.20,IMG_4570,Haldea,Burrowing,American,annelids
+40,Haldea_striatula,87.5.14.30,IMG_4568,Haldea,Burrowing,American,annelids
+41,Hebius_atemporale_1,1983.164,IMG_1599,Hebius,Terrestrial,Asian,unknown
+42,Hebius_atemporale_1,1983.165,IMG_1598,Hebius,Terrestrial,Asian,unknown
+43,Hebius_bitaeniatum_2,1930.11.16.5,IMG_1596,Hebius,Terrestrial,Asian,anurans
+44,Hebius_boulengeri_2,ZMB 27694,IMG_0028,Hebius,Terrestrial,Asian,unknown
+45,Hebius_celabicus,1926.8.20.141,IMG_1696,Hebius,Semiaquatic,Asian,unknown
+46,Hebius_celabicus,1926.8.20.142,IMG_1698,Hebius,Semiaquatic,Asian,unknown
+47,Hebius_chapaensis,NSCM77924,IMG_3540,Hebius,Semiaquatic,Asian,unknown
+48,Hebius_clerki,1940.6.4.29,IMG_1568,Hebius,Semiaquatic,Asian,unknown
+49,Hebius_craspedogaster_2,1910.9.6.23,IMG_1617,Hebius,Semiaquatic,Asian,generalist
+50,Hebius_flavifrons,94.6.30.36,IMG_1610,Hebius,Semiaquatic,Asian,generalist
+51,Hebius_flavifrons,94.6.30.37,IMG_1611,Hebius,Semiaquatic,Asian,generalist
+52,Hebius_groundwateri,1946.1.13.36,IMG_1960,Hebius,Semiaquatic,Asian,unknown
+53,Hebius_inas,1938.8.7.13,IMG_1604,Hebius,Semiaquatic,Asian,unknown
+54,Hebius_inas,ZMB 64956,IMG_0085,Hebius,Semiaquatic,Asian,unknown
+55,Hebius_inas,ZMB 69956,IMG_0088,Hebius,Semiaquatic,Asian,unknown
+56,Hebius_johannis,1974.5192,IMG_1607,Hebius,Semiaquatic,Asian,fish
+57,Hebius_khasiense_1,1925.4.2.15,IMG_1577,Hebius,Semiaquatic,Asian,generalist
+58,Hebius_khasiense_1,1925.5.25.9,IMG_1576,Hebius,Semiaquatic,Asian,generalist
+59,Hebius_modestum,1969.1719,IMG_1550,Hebius,Terrestrial,Asian,anurans
+60,Hebius_modestum,1921.4.1.5,IMG_1545,Hebius,Terrestrial,Asian,anurans
+61,Hebius_octolineatum_3,1905.5.30.16,IMG_1623,Hebius,Semiaquatic,Asian,generalist
+62,Hebius_octolineatum_3,1905.5.30.17,IMG_1624,Hebius,Semiaquatic,Asian,generalist
+63,Hebius_octolineatum_3,ZMB 65578,IMG_0137,Hebius,Semiaquatic,Asian,generalist
+64,Hebius_octolineatum_3,ZMB 65580,IMG_0135,Hebius,Semiaquatic,Asian,generalist
+65,Hebius_parallelum,ZMB 65592,IMG_0123,Hebius,Semiaquatic,Asian,generalist
+66,Hebius_parallelum,ZMB 65600,IMG_0115,Hebius,Semiaquatic,Asian,generalist
+67,Hebius_petersi,1931.5.14.2,IMG_1970,Hebius,Semiaquatic,Asian,lizards
+68,Hebius_petersi,1946.1.13.47,IMG_1942,Hebius,Semiaquatic,Asian,lizards
+69,Hebius_sarasinorum,96.12.9.47,IMG_1932,Hebius,Semiaquatic,Asian,lizards
+70,Hebius_sarawacensis,ZMB 53668,IMG_0084,Hebius,Semiaquatic,Asian,generalist
+71,Hebius_sauteri_1,ZMB 27291,IMG_9980,Hebius,Terrestrial,Asian,anurans
+72,Helophis_schoutedeni,RMCA16676,IMG_3567,Helophis,Aquatic,African,unknown
+73,Helophis_schoutedeni,RMCA83.24.R-108,IMG_3561,Helophis,Aquatic,African,unknown
+74,Helophis_schoutedeni,RMCA85.30.R-22,IMG_3575,Helophis,Aquatic,African,unknown
+75,Helophis_schoutedeni,RMCA89.25.R-35,IMG_3569,Helophis,Aquatic,African,unknown
+76,Herpetoreas_pealii,1940.1.13.43,IMG_2724,Herpetoreas,Semiaquatic,Asian,unknown
+77,Herpetoreas_platyceps,1911.9.8.2,IMG_1979,Herpetoreas,Terrestrial,Asian,lizards
+78,Herpetoreas_platyceps,1953.1.1.63,IMG_1879,Herpetoreas,Terrestrial,Asian,lizards
+79,Herpetoreas_platyceps,60.3.19.1352,IMG_1973,Herpetoreas,Terrestrial,Asian,lizards
+80,Herpetoreas_sieboldi,1950.1.5.60,IMG_2625,Herpetoreas,Terrestrial,Asian,generalist
+81,Herpetoreas_sieboldi,53.8.12.30L,IMG_1874,Herpetoreas,Terrestrial,Asian,generalist
+82,Herpetoreas_sieboldi,70.11.30.37N,IMG_1996,Herpetoreas,Terrestrial,Asian,generalist
+83,Herpetoreas_sp1,CAS220256,IMG_3732,Herpetoreas,Terrestrial,Asian,generalist
+84,Herpetoreas_sp1,CAS220368,IMG_3741,Herpetoreas,Terrestrial,Asian,generalist
+85,Herpetoreas_sp1,CAS220369,IMG_3761,Herpetoreas,Terrestrial,Asian,generalist
+86,Herpetoreas_xenura,1940.3.4.8,IMG_2733,Herpetoreas,Terrestrial,Asian,generalist
+87,Herpetoreas_xenura,1956.1.12.79,IMG_2736,Herpetoreas,Terrestrial,Asian,generalist
+88,Hydrablabes_periops,1946.1.14.16,IMG_2696,Hydrablabes,Aquatic burrower,Asian,unknown
+89,Hydrablabes_periops,1946.1.14.17,IMG_2714,Hydrablabes,Aquatic burrower,Asian,unknown
+90,Hydrablabes_praefrontalis,95.11.7.18,IMG_2561,Hydrablabes,Aquatic burrower,Asian,unknown
+91,Hydraethiops_melanogaster,ZMB 20234,IMG_0020,Hydraetheops,Semiaquatic,African,aquatic gen
+92,Hydraethiops_melanogaster,ZMB 76842,IMG_0016,Hydraetheops,Semiaquatic,African,unknown
+93,Isanophis_boonsongi,FMNH135328,IMG_3585,Isanophis,Aquatic,Asian,aquatic gen
+94,Limnophis_bicolor,ZMB 7760,IMG_9963,Limnophis ,Aquatic,African,fish
+95,Liodytes_alleni,92.11.19.7,IMG_2553,Liodytes,Aquatic,American,crayfish
+96,Liodytes_alleni,AMNH72303,IMG_4551,Liodytes,Aquatic,American,crayfish
+97,Liodytes_pygaea,1963.888,IMG_2682,Seminatrix,Aquatic,American,aquatic gen
+98,Liodytes_pygaea,1980.1246,IMG_2674,Seminatrix,Aquatic,American,aquatic gen
+99,Liodytes_rigida,AMNH159322,IMG_4478,Liodytes,Aquatic,American,crayfish
+100,Liodytes_rigida,AMNH159323,IMG_4472,Liodytes,Aquatic,American,crayfish
+101,Liodytes_rigida,AMNH160211,IMG_4476,Liodytes,Aquatic,American,crayfish
+102,Liodytes_rigida,USNM71180,IMG_4037,Liodytes,Aquatic,American,crayfish
+103,Liodytes_rigida,ZMB 5172,IMG_0169,Liodytes,Aquatic,American,crayfish
+104,Lycognathophis_seychellensis,NMW23022,IMG_0145,Lycognathophis,Terrestrial,African,lizards
+105,Lycognathophis_seychellensis,UMMZ175271,IMG_3462,Lycognathophis,Terrestrial,African,lizards
+106,Lycognathophis_seychellensis,UMMZ175492,IMG_3481,Lycognathophis,Terrestrial,African,lizards
+107,Lycognathophis_seychellensis,UMMZ177089,IMG_3498,Lycognathophis,Terrestrial,African,lizards
+108,Lycognathophis_seychellensis,UMMZ46253,IMG_3465,Lycognathophis,Terrestrial,African,lizards
+109,Natriciteres_olivacea_1,USNM120838,IMG_4328,Natriciteres,Semiaquatic,African,generalist
+110,Natrix_astreptophora,ZMB 26800,IMG_0149,Natrix,Semiaquatic,European,generalist
+111,Natrix_cetti,ZMB 28544,IMG_0204,Natrix,Semiaquatic,European,generalist
+112,Natrix_maura_1,1974.936,IMG_2757,Natrix,Semiaquatic,European,aquatic gen
+113,Natrix_maura_1,94.6.1.35,IMG_2746,Natrix,Semiaquatic,European,aquatic gen
+114,Natrix_natrix,ZMB 33068,IMG_0187,Natrix,Semiaquatic,European,generalist
+115,Natrix_natrix,ZMB 17712,IMG_0160,Natrix,Semiaquatic,European,generalist
+116,Natrix_natrix,ZMB 1938,IMG_0147,Natrix,Semiaquatic,European,generalist
+117,Natrix_natrix_persa,ZMB 33069A,IMG_0172,Natrix,Semiaquatic,European,generalist
+118,Natrix_tessellata_3,USNM141749,IMG_4289,Natrix,Aquatic,European,generalist
+119,Nerodia_clarkii,ZMB 9806,IMG_0077,Nerodia,Aquatic,American,aquatic gen
+120,Nerodia_clarkii,ZMB 9806,IMG_0126,Nerodia,Aquatic,American,aquatic gen
+121,Nerodia_cyclopion,AMNH169804,IMG_4501,Nerodia,Aquatic,American,aquatic gen
+122,Nerodia_fasciata,1925.1.12.7,IMG_2798,Nerodia,Aquatic,American,aquatic gen
+123,Nerodia_fasciata,ZMB 66029,IMG_0078,Nerodia,Aquatic,American,aquatic gen
+124,Nerodia_paucimaculata,USNM142806,IMG_4231,Nerodia,Aquatic,American,aquatic gen
+125,Nerodia_rhombifer,ZMB 49382,IMG_9975,Nerodia,Aquatic,American,aquatic gen
+126,Nerodia_rhombifer,ZMB 65210,IMG_9978,Nerodia,Aquatic,American,aquatic gen
+127,Nerodia_sipedon,1980.1226,IMG_2809,Nerodia,Aquatic,American,aquatic gen
+128,Nerodia_sipedon,192.9.11.47,IMG_2796,Nerodia,Aquatic,American,aquatic gen
+129,Nerodia_sipedon,USNM1350,IMG_4239,Nerodia,Aquatic,American,aquatic gen
+130,Nerodia_taxispilota,ZMB 65146,IMG_0035,Nerodia,Aquatic,American,aquatic gen
+131,Nerodia_taxispilota,ZMB 65148,IMG_0033,Nerodia,Aquatic,American,aquatic gen
+132,Opisthotropis_latouchii,ZMB 66556,IMG_9966,Opisthotrophis,Aquatic burrower,Asian,annelids
+133,Opisthotropis_latouchii,ZMB 67308,IMG_9960,Opisthotrophis,Aquatic burrower,Asian,annelids
+134,Paratapinophis_praemaxillaris,FMNH 271443,IMG_3615,Parahelicops,Aquatic,Asian,unknown
+135,Paratapinophis_praemaxillaris,FMNH 271445,IMG_3606,Parahelicops,Aquatic,American,unknown
+136,Pseudagkistrodon_rudis,AMNH34520,IMG_4550,Macropisthodon,Terrestrial,American,anurans
+137,Regina_grahami,58.1.9.5,IMG_2549,Regina,Aquatic,American,crayfish
+138,Regina_grahami,64.12.12.47,IMG_2548,Regina,Aquatic,American,crayfish
+139,Rhabdophis_auriculata,64.7.11.40,IMG_2664,Rhabdophis,Semiaquatic,Asian,anurans
+140,Rhabdophis_auriculata,ZMB 3977,IMG_9985,Rhabdophis,Semiaquatic,Asian,anurans
+141,Rhabdophis_barbouri,RR1963.999,IMG_2694,Rhabdophis,Unknown,Asian,unknown
+142,Rhabdophis_ceylonensis,97.10.20.8,IMG_2662,Rhabdophis,Terrestrial,Asian,generalist
+143,Rhabdophis_chrysargoides,1980.91,IMG_2728,Rhabdophis,Semiaquatic,Asian,anurans
+144,Rhabdophis_chrysargoides,96.12.9.51,IMG_2725,Rhabdophis,Semiaquatic,Asian,anurans
+145,Rhabdophis_chrysargos_1,96.9.28.2,IMG_3009,Rhabdophis,Semiaquatic,Asian,generalist
+146,Rhabdophis_chrysargos_3,79.4.11.18,IMG_3008,Rhabdophis,Semiaquatic,Asian,generalist
+147,Rhabdophis_conspicillatus,1908.12.28.68,IMG_1590,Rhabdophis,Terrestrial,Asian,unknown
+148,Rhabdophis_conspicillatus,95.2.28.25,IMG_1593,Rhabdophis,Terrestrial,Asian,unknown
+149,Rhabdophis_himalayanus_1,1936.7.4.23,IMG_3032,Rhabdophis,Semiaquatic,Asian,generalist
+150,Rhabdophis_himalayanus_1,1936.7.4.26,IMG_3025,Rhabdophis,Semiaquatic,Asian,generalist
+151,Rhabdophis_leonardi,CAS215062,IMG_3686,Rhabdophis,Semiaquatic,Asian,unknown
+152,Rhabdophis_leonardi,CAS215102,IMG_3692,Rhabdophis,Semiaquatic,Asian,unknown
+153,Rhabdophis_leonardi,CAS215104,IMG_3699,Rhabdophis,Semiaquatic,Asian,unknown
+154,Rhabdophis_lineatus,ZMB 6729,IMG_0041,Rhabdophis,Semiaquatic,Asian,unknown
+155,Rhabdophis_murudensis,1978.1874,IMG_2634,Rhabdophis,Terrestrial,Asian,anurans
+156,Rhabdophis_nuchalis_1,ZMB 27689,IMG_0047,Rhabdophis,Terrestrial,Asian,generalist
+157,Rhabdophis_subminiatus_1,1928.10.26.22,IMG_2651,Rhabdophis,Semiaquatic,Asian,anurans
+158,Rhabdophis_subminiatus_1,1940.4.26.5,IMG_2646,Rhabdophis,Semiaquatic,Asian,anurans
+159,Rhabdophis_swinhonis_1,ZMB 30548,IMG_0051,Rhabdophis,Semiaquatic,Asian,generalist
+160,Rhabdops_olivaceous,BNHS1723,IMG_3108,Rhabdops,Aquatic burrower,Asian,aquatic gen
+161,Smithophis_bicolor,1907.12.16.11,IMG_2673,Smithophis,Aquatic burrower,Asian,annelids
+162,Smithophis_bicolor,BNHS1732,IMG_3127,Smithophis,Aquatic burrower,Asian,annelids
+163,Smithophis_bicolor,ZSI7032,IMG_3317,Smithophis,Aquatic burrower,Asian,annelids
+164,Smithophis_linearis,ZSI4194,IMG_3287,Smithophis,Aquatic burrower,Asian,unknown
+165,Storeria_dekayi,1981.14,IMG_9268,Storeria,Burrowing,American,annelids
+166,Storeria_dekayi,1933.9.11.91,IMG_9443,Storeria,Burrowing,American,annelids
+167,Storeria_hidalgoensis,AMNH160335,IMG_4511,Storeria,Burrowing,American,unknown
+168,Storeria_hidalgoensis,AMNH160337,IMG_4505,Storeria,Burrowing,American,unknown
+169,Storeria_storerioides,USNM24990,IMG_4306,Storeria,Burrowing,American,molluscs
+170,Thamnophis_atratus,ZMB 49158,IMG_0011,Thamnophis,Semiaquatic,American,aquatic gen
+171,Thamnophis_bogerti,AMNH93237,IMG_4558,Thamnophis,Semiaquatic,American,generalist
+172,Thamnophis_bogerti,AMNH97873,IMG_4489,Thamnophis,Semiaquatic,American,generalist
+173,Thamnophis_brachystoma,CAS149689,IMG_3717,Thamnophis,Terrestrial,American,annelids
+174,Thamnophis_brachystoma,CAS200836,IMG_3720,Thamnophis,Terrestrial,American,annelids
+175,Thamnophis_chrysocephalus,USNM30494,IMG_4276,Thamnophis,Semiaquatic,American,unknown
+176,Thamnophis_couchii,ZMB 34048,IMG_9997,Thamnophis,Aquatic,American,fish
+177,Thamnophis_cyrtopsis,ZMB 2024,IMG_9998,Thamnophis,Semiaquatic,American,generalist
+178,Thamnophis_cyrtopsis,ZMB 47817,IMG_0006,Thamnophis,Semiaquatic,American,generalist
+179,Thamnophis_elegans,ZMB 7846,IMG_0073,Thamnophis,Semiaquatic,American,generalist
+180,Thamnophis_exsul,AMNH160384,IMG_4471,Thamnophis,Terrestrial,American,unknown
+181,Thamnophis_exsul,CAS218284,IMG_3714,Thamnophis,Terrestrial,American,unknown
+182,Thamnophis_exsul,USNM166423,IMG_4265,Thamnophis,Terrestrial,American,unknown
+183,Thamnophis_hammondii,ZMB 31222,IMG_0005,Thamnophis,Semiaquatic,American,generalist
+184,Thamnophis_lineri,USNM224548,IMG_4274,Thamnophis,Semiaquatic,American,unknown
+185,Thamnophis_marcianus,ZMB 2001,IMG_9990,Thamnophis,Semiaquatic,American,generalist
+186,Thamnophis_marcianus,ZMB 2001A,IMG_9995,Thamnophis,Semiaquatic,American,generalist
+187,Thamnophis_melanogaster,ZMB 4665,IMG_0013,Thamnophis,Semiaquatic,American,generalist
+188,Thamnophis_pulchrilatus,AMNH102523,IMG_4480,Thamnophis,Semiaquatic,American,unknown
+189,Thamnophis_radix,ZMB 5445,IMG_0002,Thamnophis,Aquatic,American,generalist
+190,Thamnophis_rossmani,AMNH83956,IMG_4547,Thamnophis,Aquatic,American,aquatic gen
+191,Thamnophis_rufipunctatus,AMNH88717,IMG_4512,Thamnophis,Aquatic,American,fish
+192,Thamnophis_rufipunctatus,AMNH88718,IMG_4515,Thamnophis,Aquatic,American,fish
+193,Thamnophis_sauritus,ZMB 48891,IMG_0008,Thamnophis,Semiaquatic,American,generalist
+194,Thamnophis_sauritus,ZMB 52880,IMG_0010,Thamnophis,Semiaquatic,American,generalist
+195,Thamnophis_scalaris_2,ZMB 47829,IMG_0067,Thamnophis,Terrestrial,American,generalist
+196,Thamnophis_scaliger_1,AMNH88724,IMG_4552,Thamnophis,Terrestrial,American,generalist
+197,Thamnophis_scaliger_1,AMNH91594,IMG_4553,Thamnophis,Terrestrial,American,generalist
+198,Thamnophis_scaliger_1,AMNH91596,IMG_4554,Thamnophis,Terrestrial,American,generalist
+199,Thamnophis_sumichrasti,ZMB 64688,IMG_0070,Thamnophis,Aquatic,American,generalist
+200,Thamnophis_validus,USNM1309,IMG_4230,Thamnophis,Aquatic,American,aquatic gen
+201,Trachischium_fuscum,BNHS1695-47,IMG_3218,Trachischium,Burrowing,Asian,annelids
+202,Trachischium_laeve,BNHS 2744,IMG_3237,Trachischium,Burrowing,Asian,annelids
+203,Trachischium_monticola_1,BNHS 1684,IMG_3235,Trachischium,Burrowing,Asian,annelids
+204,Trachischium_tenuiceps,BNHS 1707-A,IMG_3230,Trachischium,Burrowing,Asian,annelids
+205,Trachischium_tenuiceps,BNHS 1707-B,IMG_3231,Trachischium,Burrowing,Asian,annelids
+206,Trachischium_tenuiceps,BNHS1709,IMG_3228,Trachischium,Burrowing,Asian,annelids
+207,Trimerodytes_aequifasciata,1983.1096,IMG_2605,Trimerodytes,Aquatic,Asian,aquatic gen
+208,Trimerodytes_aequifasciata,1983.1098,IMG_2600,Trimerodytes,Aquatic,Asian,aquatic gen
+209,Trimerodytes_annularis,93.4.20.23,IMG_2566,Trimerodytes,Aquatic,Asian,aquatic gen
+210,Trimerodytes_balteata,USNM85000,IMG_4333,Trimerodytes,Aquatic burrower,Asian,fish
+211,Trimerodytes_percarinata,ZMB 67312,IMG_0182,Trimerodytes,Aquatic,Asian,aquatic gen
+212,Tropidoclonion_lineatum,AMNH162471,IMG_4536,Tropidoclonium,Burrowing,American,annelids
+213,Tropidonophis_aenigmaticus,AMNH73946,IMG_4423,Tropidonophis ,Terrestrial,Asian,unknown
+214,Tropidonophis_cf._elongatus,ZMB 75007,IMG_0217,Tropidonophis ,Terrestrial,Asian,anurans
+215,Tropidonophis_doriae,1904.3.17.10,IMG_3053,Tropidonophis ,Terrestrial,Asian,unknown
+216,Tropidonophis_doriae,NHMUK2013.195,IMG_3061,Tropidonophis ,Terrestrial,Asian,unknown
+217,Tropidonophis_halmahericus,ZMB 9732,IMG_0194,Tropidonophis ,Terrestrial,Asian,generalist
+218,Tropidonophis_hypomelas,ZMB 24055A,IMG_0165,Tropidonophis ,Terrestrial,Asian,unknown
+219,Tropidonophis_mairii_brongersmai,AMNH57879,IMG_4435,Tropidonophis ,Terrestrial,Asian,unknown
+220,Tropidonophis_mcdowelli,AMNH62489,IMG_4423,Tropidonophis ,Terrestrial,Asian,unknown
+221,Tropidonophis_multiscutellatus_3,1938.6.9.37,IMG_2738,Tropidonophis ,Terrestrial,Asian,unknown
+222,Tropidonophis_picturatus,85.6.30.26,IMG_3072,Tropidonophis ,Terrestrial,Asian,unknown
+223,Tropidonophis_picturatus,95.4.26.46,IMG_2020,Tropidonophis ,Terrestrial,Asian,unknown
+224,Tropidonophis_picturatus,ZMB 24193,IMG_0218,Tropidonophis ,Terrestrial,Asian,unknown
+225,Tropidonophis_statisticus_1,AMNH59068,IMG_4441,Tropidonophis ,Terrestrial,Asian,unknown
+226,Tropidonophis_truncatus,ZMB 67263,IMG_0198,Tropidonophis ,Terrestrial,Asian,lizards
+227,Virginia_valeriae_1,1957.1.11.44,IMG_4562,Virginia,Burrowing,American,annelids
+228,Virginia_valeriae_1,94.9.29.1,IMG_4564,Virginia,Burrowing,American,annelids
+229,Virginia_valeriae_1,98.7.23.8,IMG_4565,Virginia,Burrowing,American,annelids
+230,Virginia_valeriae_1,98.7.23.9,IMG_4566,Virginia,Burrowing,American,annelids
+231,Xenochrophis_bellula,1938.2.2.1,IMG_1614,Xenochrophis,Semiaquatic,Asian,generalist
+232,Xenochrophis_cerasogaster,60.3.19.1223,IMG_1658,Xenochrophis,Aquatic,Asian,aquatic gen
+233,Xenochrophis_cerasogaster,94.6.25.3,IMG_1661,Xenochrophis,Aquatic,Asian,aquatic gen
+234,Xenochrophis_maculatus,1948.1.15.21,IMG_1902,Xenochrophis,Semiaquatic,Asian,aquatic gen
+235,Xenochrophis_maculatus,89.11.12.22,IMG_2607,Xenochrophis,Semiaquatic,Asian,generalist
+236,Xenochrophis_maculatus,ZMB 30803,IMG_0159,Xenochrophis,Semiaquatic,Asian,generalist
+237,Xenochrophis_trianguligerus_1,1980.913,IMG_3000,Xenochrophis,Aquatic,Asian,generalist
+238,Xenochrophis_trianguligerus_1,85.5.4.11,IMG_3007,Xenochrophis,Aquatic,Asian,generalist
+239,Xenochrophis_trianguligerus_2,86.5.15.23,IMG_2575,Xenochrophis,Aquatic,Asian,generalist
+240,Xenochrophis_vittatus,ZMB 33622,IMG_0154,Xenochrophis,Aquatic,Asian,generalist
