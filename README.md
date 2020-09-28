@@ -14,7 +14,7 @@ To cite this repo:
 > 
 
 
-![alt text](https://github.com/nhcooper123/dino-trees/raw/master/outputs/GMM/PC123-diet-habit-GMM.png)
+![alt text](https://github.com/nhcooper123/natricine/raw/master/outputs/GMM/PC123-diet-habit-GMM.png)
 
 ------
 
