@@ -68,7 +68,7 @@ outputBU["obsC"] <- x$ObservedCs
 outputBU["PVals"] <- x$Pvals
 
 # Write to file
-write_csv(outputBU, path = "outputs/GMM/convevol-results-burrower-GMM.csv") 
+write_csv(outputBU, file = "outputs/GMM/convevol-results-burrower-GMM.csv")
 
 #--------------------------------------------------------------------------------
 # Aquatic burrowing vs the rest
@@ -102,7 +102,7 @@ outputABU["PVals"] <- x$Pvals
 
 outputABU
 
-write_csv(outputABU, path = "outputs/GMM/convevol-results-aquaburrower-GMM.csv") 
+write_csv(outputABU, file = "outputs/GMM/convevol-results-aquaburrower-GMM.csv")
 
 #--------------------------------------------------------------------------------
 # Terrestrial vs the rest
@@ -119,6 +119,12 @@ ans <- convrat(phyl = tree2D,
 # Look at output
 ans
 
+# Create an output file. There are four 'C' outputs C1-C4 and columns below
+outputTE <- data.frame(array(dim = c(4, 3)))
+names(outputTE) <- c("group", "obsC", "PVals")
+rownames(outputTE) <- c("C1", "C2", "C3", "C4")
+
+
 ### This takes a long time (days) #########
 # Get significance values
 # Takes a while to run
@@ -132,7 +138,7 @@ outputTE["obsC"] <- x$ObservedCs
 outputTE["PVals"] <- x$Pvals
 
 # Write to file
-write_csv(outputTE, path = "outputs/GMM/convevol-results-terrestrial-GMM.csv") 
+write_csv(outputTE, file = "outputs/GMM/convevol-results-terrestrial-GMM.csv")
 
 #--------------------------------------------------------------------------------
 # Aquatic vs the rest
@@ -149,8 +155,11 @@ ans <- convrat(phyl = tree2D,
 # Look at output
 ans
 
-# Look at output
-#pval
+# Create an output file. There are four 'C' outputs C1-C4 and columns below
+outputAQ <- data.frame(array(dim = c(4, 3)))
+names(outputAQ) <- c("group", "obsC", "PVals")
+rownames(outputAQ) <- c("C1", "C2", "C3", "C4")
+
 ### This takes a long time (days) #########
 x <- convratsig(phyl = tree2D,
                 phendata = pc.data,
@@ -161,7 +170,7 @@ outputAQ["obsC"] <- x$ObservedCs
 outputAQ["PVals"] <- x$Pvals
 
 # Write to file
-write_csv(outputAQ, path = "outputs/GMM/convevol-results-aquatic-GMM.csv")
+write_csv(outputAQ, file = "outputs/GMM/convevol-results-aquatic-GMM.csv")
 
 #--------------------------------------------------------------------------------
 # Semi Aquatic vs the rest
@@ -178,6 +187,12 @@ ans <- convrat(phyl = tree2D,
 # Look at output
 ans
 
+# Create an output file. There are four 'C' outputs C1-C4 and columns below
+outputSAQ <- data.frame(array(dim = c(4, 3)))
+names(outputSAQ) <- c("group", "obsC", "PVals")
+rownames(outputSAQ) <- c("C1", "C2", "C3", "C4")
+
+
 ### This takes a long time (days) #########
 x <- convratsig(phyl = tree2D,
                 phendata = pc.data,
@@ -188,4 +203,4 @@ outputSAQ["obsC"] <- x$ObservedCs
 outputSAQ["PVals"] <- x$Pvals
 
 # Write to file
-write_csv(outputAQ, path = "outputs/GMM/convevol-results-semiaquatic-GMM.csv")
+write_csv(outputSAQ, file = "outputs/GMM/convevol-results-semiaquatic-GMM.csv")
