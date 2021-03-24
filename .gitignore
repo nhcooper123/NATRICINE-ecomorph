@@ -1,6 +1,8 @@
 # Extras
 /raw-data
 .DS_Store
+*.docx
+*.xlsx
 
 
 # History files
