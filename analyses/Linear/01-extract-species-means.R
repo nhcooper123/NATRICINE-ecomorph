@@ -11,7 +11,7 @@ library(tidyverse)
 # Import dataset
 #-----------------------------------------------------------
 # Import the data (with labels in first row). 
-# Includes 1374 individuals 185 species including four outgroups
+# Includes 1346 individuals 206 taxa 
 ds <- read_csv("data/Linear/metadata-data-natricine-LM.csv")
 
 #----------------------------------------------
