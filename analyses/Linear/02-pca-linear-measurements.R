@@ -1,5 +1,6 @@
-# Analyses using natricine linear morphology dataset
-# V. Deepak April 2019 modifed by Natalie Cooper
+# Title: Head shape variation in natricine snakes correlates with habit and diet
+# V. Deepak & Natalie Cooper, 2021 
+# PCA analyses using natricine linear morphology dataset
 
 #-------------------------------
 # Load libraries and functions
