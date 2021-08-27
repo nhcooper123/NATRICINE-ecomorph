@@ -1,5 +1,5 @@
 #-----------------------------------------------------------------------
-# Code for the PCA figures
+# Code for the supplemental PCA figures
 #-----------------------------------------------------------------------
 # Load libraries
 library(tidyverse)
@@ -8,86 +8,86 @@ library(patchwork)
 # Import data
 data <- read_csv("data/Linear/snakepca.csv")
 
-# Exclude unknown category in Habit and select only the first 7 PC's
+#-----------------------------------------------------------------------
+# Set up data for PC boxplots
+#-----------------------------------------------------------------------
+# Select only the first 7 PC's, reshape by ecomorph
 ds2 <-
   data %>%
-  filter(Habit != "Unknown") %>%
-  dplyr::select(Species, Habit, PC1:PC7) %>%
+  #filter(Habit != "Unknown") %>%
+  dplyr::select(Species, ecomorph = Habit, PC1:PC7) %>%
+  pivot_longer(PC1:PC7, "PC", "value") 
+
+# Select only the first 7 PC's, reshape by diet
+ds3 <-
+  data %>%
+  #filter(Diet != "Unknown") %>%
+  dplyr::select(Species, diet = Diet, PC1:PC7) %>%
   pivot_longer(PC1:PC7, "PC", "value")
 
 #-----------------------------------------------------------------------
 # PC scores plots as boxplots
 #-----------------------------------------------------------------------
 # Plot for habit
-ds2_plot <- 
-  ggplot(ds2, aes(x = PC, y = value, colour = Habit)) +
-  scale_fill_manual(values=c("#007ba3", "#002397", "#92002e", "#868893", "#928600"))+
-  geom_boxplot() +
+habit_plot <- 
+  ggplot(ds2, aes(x = PC, y = value, colour = ecomorph)) +
   geom_jitter(alpha = 0.3) +
   theme_bw(base_size = 14) +
-  scale_color_manual(values = c("#007ba3", "#002397", "#92002e", "#868893", "#928600")) +
-  ylim(-0.2,0.2) +
+  geom_boxplot() +
+  scale_color_manual(values = c("#007ba3", "#002397", "#92002e", "#868893", "#928600", "black")) +
+  ylim(-10,10) +
   coord_flip() +
   xlab("PC axis") +
   ylab("PC score")
-
-# Plot for diet
-ds3 <-
-  data %>%
-  filter(Diet != "unknown") %>%
-  dplyr::select(Species, Diet, PC1:PC7) %>%
-  pivot_longer(PC1:PC7, "PC", "value")
-
-ds3_plot <-
-  ggplot(ds3, aes(x = PC, y = value, colour = Diet)) +
-  scale_color_manual(values = c("#007ba3", "#002397", "#92002e", "#868893", "#928600", "tan1", "yellow", "deeppink")) +
-  geom_boxplot() +
-  geom_jitter(alpha = 0.3) +
-  theme_bw(base_size = 14) +
-  ylim(-0.2,0.2) +
-  coord_flip() +
-  xlab("PC axis") +
-  ylab("PC score")
-
-# Plot for origin
-ds4 <-
-  data %>%
-  filter(Origin != "unknown") %>%
-  dplyr::select(Species, Origin, PC1:PC7) %>%
-  pivot_longer(PC1:PC7, "PC", "value")
-
-ds4_plot <-
-  ggplot(ds4, aes(x = PC, y = value, colour = Origin)) +
-  geom_boxplot() +
-  geom_jitter(alpha = 0.3) +
-  theme_bw(base_size = 14) +
-  scale_color_manual(values = c("#ff6364", "#64e291", "#0d8eae", "#e0b04c")) +
-  ylim(-0.2,0.2) +
-  coord_flip() +
-  xlab("PC axis") +
-  ylab("PC score")
-
-# three panel figure
-(ds2_plot + ds3_plot + ds4_plot)
 
 # Save figure
-# ggsave(filename = "outputs/Linear/PCs17-diet-habit-origin-LM.png", width = 12, height = 6)
+# ggsave(habit_plot, filename = "outputs/Linear/Figures/PC1-PC7-ecomorph-LM.png", width = 6)
+
+# Plot for diet
+diet_plot <-
+  ggplot(ds3, aes(x = PC, y = value, colour = diet)) +
+  scale_color_manual(values = c("#007ba3", "#002397", "#92002e", "#868893", "#928600", "tan1", "yellow", "deeppink", "black")) +
+  geom_jitter(alpha = 0.3) +
+  geom_boxplot() +
+  theme_bw(base_size = 14) +
+  ylim(-10,10) +
+  coord_flip() +
+  xlab("PC axis") +
+  ylab("PC score")
+
+# Save figure
+# ggsave(diet_plot, filename = "outputs/Linear/Figures/PC1-PC7-diet-LM.png", width = 6)
+
 #-----------------------------------------------------------------------
-# PCA scatter plots for habit and diet
+# PCA scatter plots for habit and diet PC1-3
+#-----------------------------------------------------------------------
+# Set up data
+#-----------------------------------------------------------------------
+# Create subsets of the data with just the variables of interest
+habit_data <- 
+  data %>%
+  mutate(ecomorph = as.factor(Habit))
+
+diet_data <- 
+  data %>%
+  mutate(diet = as.factor(Diet))
+
+#-----------------------------------------------------------------------
+# PCA plots
 #-----------------------------------------------------------------------
 plot_habit_PC12 <-
-  ggplot(data, aes(x = PC1, y = PC2, col = Habit)) +
+  ggplot(habit_data, aes(x = PC1, y = PC2, col = ecomorph)) +
   geom_point(size = 4, alpha = 0.7) +
-  scale_color_manual(values = c("#007ba3", "#002397", "#92002e", "#868893", "#928600", "red", "green", "yellow", "black")) +
+  scale_color_manual(values = c("#007ba3", "#002397", "#92002e", "#868893", "#928600", "black")) +
   labs(x = "PC1 (67.0%)", y = "PC2 (14.5%)")+
   geom_hline(yintercept = 0, linetype = 2, size = 0.5, col = "grey") +
   theme_bw(base_size = 14) +
   theme(legend.position = "none")
 
 plot_habit_PC23 <-
-  ggplot(data, aes(x = PC2, y = PC3, col = Habit)) +
+  ggplot(habit_data, aes(x = PC2, y = PC3, col = ecomorph)) +
   geom_point(size = 4, alpha = 0.7) +
-  scale_color_manual(values = c("#007ba3", "#002397", "#92002e", "#868893", "#928600", "red", "green", "yellow", "black")) +
+  scale_color_manual(values = c("#007ba3", "#002397", "#92002e", "#868893", "#928600", "black")) +
   labs(x = "PC2 (14.5%)", y = "PC3 (5.53%)") +
   theme(legend.position = 'bottom', 
         legend.title = element_blank(),
@@ -96,15 +96,10 @@ plot_habit_PC23 <-
   geom_vline(xintercept = 0, linetype = 2, size = 0.5, col = "grey") +
   theme_bw(base_size = 14)
 
-# Diet remove unknowns
-data2diet <-
-  data %>%
-  filter(Diet != "unknown")
-
 plot_diet_PC12 <-
-  ggplot(data2diet, aes(x = PC1, y = PC2, col = Diet)) +
+  ggplot(diet_data, aes(x = PC1, y = PC2, col = diet)) +
   geom_point(size = 4, alpha = 0.7) +
-  scale_color_manual(values = c("#007ba3", "#002397", "#92002e", "#868893", "#928600", "tan1", "yellow", "deeppink")) +
+  scale_color_manual(values = c("#007ba3", "#002397", "#92002e", "#868893", "#928600", "tan1", "yellow", "deeppink", "black")) +
   labs(x = "PC1 (67.0%)", y = "PC2 (14.5%)") +
   theme(legend.position = 'bottom', 
         legend.title = element_blank(),
@@ -115,9 +110,9 @@ plot_diet_PC12 <-
   theme(legend.position = "none")
 
 plot_diet_PC23 <-
-  ggplot(data2diet, aes(x = PC2, y = PC3, col = Diet)) +
+  ggplot(diet_data, aes(x = PC2, y = PC3, col = diet)) +
   geom_point(size = 4, alpha = 0.7) +
-  scale_color_manual(values = c("#007ba3", "#002397", "#92002e", "#868893", "#928600", "tan1", "yellow", "deeppink")) +
+  scale_color_manual(values = c("#007ba3", "#002397", "#92002e", "#868893", "#928600", "tan1", "yellow", "deeppink", "black")) +
   labs(x = "PC2 (14.5%)", y = "PC3 (5.53%)")+
   theme(legend.position = 'bottom', 
         legend.title = element_blank(),
@@ -130,4 +125,4 @@ plot_diet_PC23 <-
 (plot_habit_PC12 + plot_habit_PC23) / (plot_diet_PC12 + plot_diet_PC23)
 
 # Save figure
-# ggsave(filename = "outputs/Linear/PC123-diet-habit-LM.png", height = 9, width = 13)
+# ggsave(filename = "outputs/Linear/Figures/PC123-ecomorph-diet-LM.png", height = 9, width = 13)

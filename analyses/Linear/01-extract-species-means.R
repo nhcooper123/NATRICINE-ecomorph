@@ -45,4 +45,4 @@ snake <-
 #----------------------------------
 # Export the file (using write_csv)
 #----------------------------------
-write_csv(snake, file = "data/Linear/linear-species-means.csv")
+# write_csv(snake, file = "data/Linear/linear-species-means.csv")

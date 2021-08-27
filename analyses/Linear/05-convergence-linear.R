@@ -68,7 +68,7 @@ outputBU["obsC"] <- x$ObservedCs
 outputBU["PVals"] <- x$Pvals
 
 # Write to file
-write_csv(outputBU, path = "outputs/Linear/convevol-results-burrower.csv") 
+write_csv(outputBU, path = "outputs/Linear/Tables/convevol-results-burrower.csv") 
 
 #--------------------------------------------------------------------------------
 # Aquatic burrowing vs the rest
@@ -102,7 +102,7 @@ outputABU["PVals"] <- x$Pvals
 
 outputABU
 
-write_csv(outputABU, path = "outputs/Linear/convevol-results-aquaburrower.csv") 
+write_csv(outputABU, path = "outputs/Linear/Tables/convevol-results-aquaburrower.csv") 
 
 #--------------------------------------------------------------------------------
 # Terrestrial vs the rest
@@ -132,7 +132,7 @@ outputTE["obsC"] <- x$ObservedCs
 outputTE["PVals"] <- x$Pvals
 
 # Write to file
-write_csv(outputTE, path = "outputs/Linear/convevol-results-terrestrial.csv") 
+write_csv(outputTE, path = "outputs/Linear/Tables/convevol-results-terrestrial.csv") 
 
 #--------------------------------------------------------------------------------
 # Aquatic vs the rest
@@ -161,7 +161,7 @@ outputAQ["obsC"] <- x$ObservedCs
 outputAQ["PVals"] <- x$Pvals
 
 # Write to file
-write_csv(outputAQ, path = "outputs/Linear/convevol-results-aquatic.csv")
+write_csv(outputAQ, path = "outputs/Linear/Tables/convevol-results-aquatic.csv")
 
 #--------------------------------------------------------------------------------
 # Semi Aquatic vs the rest
@@ -188,4 +188,4 @@ outputSAQ["obsC"] <- x$ObservedCs
 outputSAQ["PVals"] <- x$Pvals
 
 # Write to file
-write_csv(outputSAQ, path = "outputs/Linear/convevol-results-semiaquatic.csv")
+write_csv(outputSAQ, path = "outputs/Linear/Tables/convevol-results-semiaquatic.csv")

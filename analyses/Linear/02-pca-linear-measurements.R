@@ -8,13 +8,6 @@ library(geomorph)
 library(tidyverse)
 library(reshape2)
 library(cowplot)
-
-# Convex hulls function (for PC1 and 2 only)
-make.hull <- function(data){
-  hull <- spatstat::convexhull.xy(data$PC1, data$PC2)
-  data.frame(x = hull$bdry[[1]]$x, y = hull$bdry[[1]]$y)
-}
-
 #-------------------------------------------------------------
 # Import the species mean data
 #------------------------------------------------------------
@@ -65,4 +58,4 @@ ggplot(plotdf, aes(x = Var1, y = Values)) +
   geom_hline(yintercept = 0, linetype = 2, size = 0.5, col = "grey")
 
 # Save plot
-#ggsave("outputs/Linear/PC-loadings.png", height = 10)
+#ggsave("outputs/Linear/Figures/PC-loadings.png", height = 10)
