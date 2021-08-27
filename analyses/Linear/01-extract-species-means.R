@@ -1,5 +1,6 @@
+# Title: Head shape variation in natricine snakes correlates with habit and diet
+# V. Deepak & Natalie Cooper, 2021 
 # Extract species means for natricine linear morphology dataset
-# V. Deepak April 2019 modifed by Natalie Cooper
 
 #---------------------------
 # Load libraries
