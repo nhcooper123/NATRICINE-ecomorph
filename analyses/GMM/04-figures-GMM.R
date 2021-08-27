@@ -8,7 +8,7 @@ library(patchwork)
 # Import data
 data2d <- read_csv("data/GMM/snake-data-pca-GMM.csv")
 
-# Exclude unknown category in Habit and select only the first 8 PC's
+# Exclude unknown category in ecomorph and select only the first 8 PC's
 ds2 <-
   data2d %>%
   filter(Habit != "Unknown") %>%
@@ -18,7 +18,7 @@ ds2 <-
 #-----------------------------------------------------------------------
 # PC scores plots as boxplots
 #-----------------------------------------------------------------------
-# Plot for habit
+# Plot for ecomorph
 ds2_plot <- 
   ggplot(ds2, aes(x = PC, y = value, colour = Habit)) +
   scale_fill_manual(values=c("#007ba3", "#002397", "#92002e", "#868893", "#928600"))+
@@ -48,26 +48,8 @@ ds3_plot <-
   xlab("PC axis") +
   ylab("PC score")
 
-# Plot for origin
-ds4 <-
-  data2d %>%
-  filter(Origin != "unknown") %>%
-  dplyr::select(Species, Origin, PC1:PC8) %>%
-  pivot_longer(PC1:PC8, "PC", "value")
-
-ds4_plot <-
-  ggplot(ds4, aes(x = PC, y = value, colour = Origin)) +
-  geom_boxplot() +
-  geom_jitter(alpha = 0.3) +
-  theme_bw(base_size = 14) +
-  scale_color_manual(values = c("#ff6364", "#64e291", "#0d8eae", "#e0b04c")) +
-  ylim(-0.2,0.2) +
-  coord_flip() +
-  xlab("PC axis") +
-  ylab("PC score")
-
-# three panel figure
-(ds2_plot + ds3_plot + ds4_plot)
+# two panel figure
+(ds2_plot + ds3_plot)
 
 # Save figure
 # ggsave(filename = "outputs/GMM/PCs18-diet-habit-origin-GMM.png", width = 12, height = 6)
