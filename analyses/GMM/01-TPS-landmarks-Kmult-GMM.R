@@ -52,12 +52,6 @@ species.means <- aggregate(two.d.coords ~ info$Species, FUN = mean)
 # from the tree used in linear data)
 tree <- read.nexus("data/GMM/new_datedtree.nexus")
 
-## Fix up species names
-# 1. Remove the seq_ tag from the start of the name
-tree$tip.label <- str_remove(tree$tip.label, "seq_[:alpha:]+_\\d+_")
-# 2. Remove the punctuation in some of the names
-tree$tip.label <- str_remove_all(tree$tip.label, "[\']")
-
 # Check names match
 match.species <- name.check(phy = tree, data = species.means, 
                             data.names = species.means$`info$Species`) 
@@ -129,7 +123,7 @@ write_csv(pc_data, path = "data/GMM/snake-data-pca-GMM.csv")
 #----------------------------------------------------------------------------------#
 # Estimate phylogenetic signal in GPA
 #----------------------------------------------------------------------------------#
-## Testing for phlyogenetic signal
+## Testing for phylogenetic signal
 #To do this we will use the Kmult statistic from Adams (2014), which is a multivariate 
 #version of the the K-statistic (Blomberg et al 2003) for high-dimensional multivariate data. 
 
