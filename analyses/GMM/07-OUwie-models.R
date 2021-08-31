@@ -201,7 +201,7 @@ OUM_pc1
 
 ### PC2
 aicw_pc2
-OUMV_pc2
+OUM_pc2
 
 ### PC3
 aicw_pc3
@@ -209,7 +209,7 @@ OUM_pc3
 
 ### PC4
 aicw_pc4
-OUMV_pc4
+OUM_pc4
 
 ### PC5
 aicw_pc5
@@ -217,7 +217,7 @@ OUMV_pc5
 
 ### PC6
 aicw_pc6
-OUM_pc6
+OU_pc6
 
 ### PC7
 aicw_pc7
@@ -225,4 +225,4 @@ OUM_pc7
 
 ### PC8
 aicw_pc8
-OUM_pc8
+OU_pc8
