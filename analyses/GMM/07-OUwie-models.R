@@ -22,7 +22,7 @@ ds <-
 
 # Read in the tree and tidy the species names. 
 # Force it to be ultrametric and fully bifurcating.
-tree <- read.nexus("data/GMM/new_datedtree.nexus")
+tree <- read.nexus("data/GMM/new_datedtree-GMM.nexus")
 
 # Make ultrametric
 tree <- force.ultrametric(tree)

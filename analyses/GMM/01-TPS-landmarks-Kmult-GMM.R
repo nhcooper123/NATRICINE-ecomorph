@@ -31,7 +31,7 @@ curves <- as.matrix(read.csv("data/GMM/sliders-natricine-landmarks.csv", header 
 gpa_specimens <- gpagen(skull.new, curves, ProcD = TRUE)
 
 # Read in info on genera, species, habit, diet, etc.
-info <- read.csv("data/GMM/metadata-natricine.csv", header=TRUE, row.names=1)
+info <- read.csv("data/GMM/metadata-natricine-GMM.csv", header=TRUE, row.names=1)
 
 # Sort dataset by the order of specimens in the GPA
 info <- info[match(dimnames(gpa_specimens$coords)[[3]], info$image.ID), ]
@@ -50,7 +50,7 @@ species.means <- aggregate(two.d.coords ~ info$Species, FUN = mean)
 #------------------------------------------------------------------------------------#
 # Read in tree file (Note that this is sorted for 2D dataset. This is different
 # from the tree used in linear data)
-tree <- read.nexus("data/GMM/new_datedtree.nexus")
+tree <- read.nexus("data/GMM/new_datedtree-GMM.nexus")
 
 # Check names match
 match.species <- name.check(phy = tree, data = species.means, 

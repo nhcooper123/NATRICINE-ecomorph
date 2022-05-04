@@ -27,7 +27,7 @@ habit_data <-
   mutate(diet = as.factor(Diet))
 #------------------------------------------------------------------
 # Read in the tree
-tree <- read.nexus("data/GMM/new_datedtree.nexus")
+tree <- read.nexus("data/GMM/new_datedtree-GMM.nexus")
 
 # Extract from the tree only those species which match with the data
 sps <- name.check(tree, habit_data, data.names = rownames(habit_data)) 

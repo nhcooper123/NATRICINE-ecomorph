@@ -16,7 +16,7 @@ library(tidyverse)
 snake2D <- read_csv("data/GMM/snake-data-pca-GMM.csv")
 
 # Read in the tree
-tree2D <- read.nexus("data/GMM/new_datedtree.nexus")
+tree2D <- read.nexus("data/GMM/new_datedtree-GMM.nexus")
 
 # Extract from the tree only those species which match with the data
 sps <- name.check(tree2D, snake2D, data.names = snake2D$Species)
