@@ -23,7 +23,7 @@ rownames(data) <- data$Species
 # Make sure they are factors
 habit_data <- 
   data %>%
-  mutate(ecomorph = as.factor(Habit)) %>%
+  mutate(habit = as.factor(Habit)) %>%
   mutate(diet = as.factor(Diet))
 #------------------------------------------------------------------
 # Read in the tree
@@ -37,7 +37,7 @@ tree <- drop.tip(tree, sps$tree_not_data)
 # PCA scatter plots for habit and diet
 #-----------------------------------------------------------------------
 plot_habit_PC12 <-
-  ggplot(habit_data, aes(x = PC1, y = PC2, col = ecomorph)) +
+  ggplot(habit_data, aes(x = PC1, y = PC2, col = habit)) +
   geom_point(size = 2, alpha = 0.7) +
   scale_color_manual(values = habit_colours) +
   labs(x = "PC1 (67.0%)", y = "PC2 (14.5%)")+
@@ -66,13 +66,13 @@ plot_diet_PC12 <-
 tree_base <- ggtree(tree, layout = "circular")
 
 # Select just relevant info from the datasets
-habit <- habit_data %>% select(ecomorph)
+habit <- habit_data %>% select(habit)
 diet <- habit_data %>% select(diet)
 
 # Plot habit tree
 tree1 <- 
   gheatmap(tree_base, habit, offset = 0, width =.1, colnames = FALSE) +
-  scale_fill_manual(values = habit_colours, name = "ecomorph", guide = guide_legend(order = 1))
+  scale_fill_manual(values = habit_colours, name = "habit", guide = guide_legend(order = 1))
 
 # Plot diet tree
 tree2 <- 
