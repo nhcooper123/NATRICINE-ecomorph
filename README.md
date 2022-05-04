@@ -34,8 +34,8 @@ The main analyses from the paper are in the following scripts within the `analys
 -  *00-add-missing-tips-to-tree.R*. This takes the dated tree and adds additional taxa to it to create the tree (`new_datedtree-LM.nexus`) used in the analyses.
 -  *01-extract-species-means.R*. This takes the raw specimen level data, size corrects them by regressing each against log10 body size and extracting the residuals, and then extracts species mean values.     
 -  *02-pca-linear-measurements.R*. This runs a PCA on the species level head shape variables, to produce the data (`snakepca.csv`) used in all analyses.
--  *03-figures-linear.R*. This creates the PC figures for the appendix.
--  *04-ANOVA-MANOVA-GMM.R*. This performs the MANOVAs and ANOVAs of head shape versus ecomorph and diet.
+-  *03-pca-figures-linear.R*. This creates the PC figures for the appendix.
+-  *04-ANOVA-MANOVA-linear.R*. This performs the MANOVAs and ANOVAs of head shape versus ecomorph and diet.
 -  *05-convergence-linear.R*. This looks for head shape convergence in ecomorphs using C1-C4 metrics.         
 -  *06-pca-tree-figures.R*. This creates the PCs and phylogeny plot for the paper.
 -  *07-discrete-trait-models.R*. This estimates the best model of trait evolution for ecomorph for use in script 08.
