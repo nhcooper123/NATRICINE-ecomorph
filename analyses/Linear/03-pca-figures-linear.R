@@ -15,7 +15,7 @@ data <- read_csv("data/Linear/snakepca.csv")
 ds2 <-
   data %>%
   #filter(Habit != "Unknown") %>%
-  dplyr::select(Species, ecomorph = Habit, PC1:PC7) %>%
+  dplyr::select(Species, habit = Habit, PC1:PC7) %>%
   pivot_longer(PC1:PC7, "PC", "value") 
 
 # Select only the first 7 PC's, reshape by diet
@@ -30,7 +30,7 @@ ds3 <-
 #-----------------------------------------------------------------------
 # Plot for habit
 habit_plot <- 
-  ggplot(ds2, aes(x = PC, y = value, colour = ecomorph)) +
+  ggplot(ds2, aes(x = PC, y = value, colour = habit)) +
   geom_jitter(alpha = 0.3) +
   theme_bw(base_size = 14) +
   geom_boxplot() +
@@ -66,7 +66,7 @@ diet_plot <-
 # Create subsets of the data with just the variables of interest
 habit_data <- 
   data %>%
-  mutate(ecomorph = as.factor(Habit))
+  mutate(habit = as.factor(Habit))
 
 diet_data <- 
   data %>%
@@ -76,7 +76,7 @@ diet_data <-
 # PCA plots
 #-----------------------------------------------------------------------
 plot_habit_PC12 <-
-  ggplot(habit_data, aes(x = PC1, y = PC2, col = ecomorph)) +
+  ggplot(habit_data, aes(x = PC1, y = PC2, col = habit)) +
   geom_point(size = 4, alpha = 0.7) +
   scale_color_manual(values = c("#007ba3", "#002397", "#92002e", "#868893", "#928600", "black")) +
   labs(x = "PC1 (67.0%)", y = "PC2 (14.5%)")+
@@ -85,7 +85,7 @@ plot_habit_PC12 <-
   theme(legend.position = "none")
 
 plot_habit_PC23 <-
-  ggplot(habit_data, aes(x = PC2, y = PC3, col = ecomorph)) +
+  ggplot(habit_data, aes(x = PC2, y = PC3, col = habit)) +
   geom_point(size = 4, alpha = 0.7) +
   scale_color_manual(values = c("#007ba3", "#002397", "#92002e", "#868893", "#928600", "black")) +
   labs(x = "PC2 (14.5%)", y = "PC3 (5.53%)") +
