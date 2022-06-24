@@ -1,6 +1,7 @@
 # Title: Head shape variation in natricine snakes correlates with habit and diet
 # V. Deepak & Natalie Cooper, 2021 
 # PCA analyses using natricine linear morphology dataset
+# Modified 2022
 
 #-------------------------------
 # Load libraries and functions
@@ -12,21 +13,18 @@ library(cowplot)
 #-------------------------------------------------------------
 # Import the species mean data
 #------------------------------------------------------------
-snake <- read.csv("data/Linear/linear-species-means.csv")
-
-# Remove last three variables which we are not using in this analysis
-snake <- snake[, -c(23:26)] 
+snake <- read.csv("data/Linear/linear-species-means-LSR.csv")
 
 # Look at the data
 glimpse(snake)
 
 #----------------------------------
-# PCA analysis
+# PCA analysis of LSR
 #----------------------------------
 # PCA using R function prcomp() 
 # scale. = TRUE is highly advisable, but default is FALSE.
-# use select to choose correct columns and remove TL
-rlog.pca <- prcomp(select(snake, JL_log10_res:EE_log10_res, -BWH_log10_res, -BWM_log10_res), 
+# use select to choose correct columns
+rlog.pca <- prcomp(select(snake, JL_LSR:EE_LSR), 
                    center = TRUE, scale. = TRUE)
 
 # Combine with the rest of the snake data
@@ -38,14 +36,14 @@ plot(rlog.pca)
 rlog.pca
 
 # Export the PC scores
-# write_csv(snakepca, path = "data/Linear/snakepca.csv")
+# write_csv(snakepca, file = "data/Linear/snakepca-LSR.csv")
 
 #----------------------------------
 # PCA loadings plots
 #----------------------------------
 # Reshape data for plotting
 plotdf <- 
-  melt((rlog.pca$rotation[, 1:9]), value.name = "Values", variable.name = "PC", 
+  melt((rlog.pca$rotation[, 1:10]), value.name = "Values", variable.name = "PC", 
        na.rm = TRUE)
 
 # PC loadings for each PC stacked one on top of the other
@@ -56,7 +54,8 @@ ggplot(plotdf, aes(x = Var1, y = Values)) +
   theme_bw() + 
   theme(axis.text.x = element_text(angle = 90, 
                                    hjust = 1, vjust = 0.5)) +
-  geom_hline(yintercept = 0, linetype = 2, size = 0.5, col = "grey")
+  geom_hline(yintercept = 0, linetype = 2, size = 0.5, col = "grey") +
+  xlab("")
 
 # Save plot
-#ggsave("outputs/Linear/Figures/PC-loadings.png", height = 10)
+#ggsave("outputs/Linear/Figures/PC-loadings-LSR.png", height = 10)
