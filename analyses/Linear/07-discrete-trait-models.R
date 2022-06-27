@@ -1,15 +1,14 @@
+# Modified 2022
 #-----------------------------------------------------------------------
-# Which model of dsicrete trait evolution fits best for ecomorph?
+# Which model of discrete trait evolution fits best for ecomorph?
 #-----------------------------------------------------------------------
 # Load libraries
 library(tidyverse)
-library(phytools)
 library(geiger)
-library(OUwie)
 #-----------------------------------------------------------------------
 # Prepare the tree and the data
 # Read in data
-ds <- read_csv("data/Linear/snakepca.csv")
+ds <- read_csv("data/Linear/snakepca-LSR.csv")
 
 # Make Habit into a factor
 ds <- 
