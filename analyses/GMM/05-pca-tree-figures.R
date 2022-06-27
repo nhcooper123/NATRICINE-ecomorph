@@ -44,7 +44,8 @@ plot_habit_PC12 <-
   geom_hline(yintercept = 0, linetype = 2, size = 0.5, col = "grey") +
   geom_vline(xintercept = 0, linetype = 2, size = 0.5, col = "grey") +
   theme_bw(base_size = 14) +
-  theme(legend.position = "none")
+  theme(legend.position = "none")+
+  coord_fixed(ratio = 1)
 
 plot_diet_PC12 <-
   ggplot(habit_data, aes(x = PC1, y = PC2, col = diet)) +
@@ -57,7 +58,8 @@ plot_diet_PC12 <-
   geom_hline(yintercept = 0, linetype = 2, size = 0.5, col = "grey") +
   geom_vline(xintercept = 0, linetype = 2, size = 0.5, col = "grey") +
   theme_bw(base_size = 14) +
-  theme(legend.position = "none")
+  theme(legend.position = "none") +
+  coord_fixed(ratio = 1)
 
 #-----------------------------------------------------------------------
 # Plot trees with traits at the tips
