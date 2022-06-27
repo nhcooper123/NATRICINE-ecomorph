@@ -88,8 +88,10 @@ plot_habit_PC12 <-
   scale_color_manual(values = c("#007ba3", "#002397", "#92002e", "#868893", "#928600", "black")) +
   labs(x = "PC1 (36.2%)", y = "PC2 (16.9%)")+
   geom_hline(yintercept = 0, linetype = 2, size = 0.5, col = "grey") +
+  geom_vline(xintercept = 0, linetype = 2, size = 0.5, col = "grey") +
   theme_bw(base_size = 14) +
-  theme(legend.position = "none")
+  theme(legend.position = "none") +
+  coord_fixed(ratio = 1)
 
 plot_habit_PC23 <-
   ggplot(habit_data, aes(x = PC2, y = PC3, col = habit)) +
@@ -101,7 +103,8 @@ plot_habit_PC23 <-
         legend.text = element_text(face = 'italic')) +
   geom_hline(yintercept = 0, linetype = 2, size = 0.5, col = "grey") +
   geom_vline(xintercept = 0, linetype = 2, size = 0.5, col = "grey") +
-  theme_bw(base_size = 14)
+  theme_bw(base_size = 14) +
+  coord_fixed(ratio = 1)
 
 plot_diet_PC12 <-
   ggplot(diet_data, aes(x = PC1, y = PC2, col = diet)) +
@@ -114,7 +117,8 @@ plot_diet_PC12 <-
   geom_hline(yintercept = 0, linetype = 2, size = 0.5, col = "grey") +
   geom_vline(xintercept = 0, linetype = 2, size = 0.5, col = "grey") +
   theme_bw(base_size = 14) +
-  theme(legend.position = "none")
+  theme(legend.position = "none") +
+  coord_fixed(ratio = 1)
 
 plot_diet_PC23 <-
   ggplot(diet_data, aes(x = PC2, y = PC3, col = diet)) +
@@ -126,10 +130,34 @@ plot_diet_PC23 <-
         legend.text = element_text(face = 'italic')) +
   geom_hline(yintercept = 0, linetype = 2, size = 0.5, col = "grey") +
   geom_vline(xintercept = 0, linetype = 2, size = 0.5, col = "grey") +
-  theme_bw(base_size = 14)
+  theme_bw(base_size = 14) +
+  coord_fixed(ratio = 1)
 
 # Four panel plot
 (plot_habit_PC12 + plot_habit_PC23) / (plot_diet_PC12 + plot_diet_PC23)
 
 # Save figure
 # ggsave(filename = "outputs/Linear/Figures/PC123-ecomorph-diet-LM-LSR.png", height = 9, width = 13)
+
+#--------------------------
+# PCA plot base for Fig 3
+#--------------------------
+# Fit convex hulls
+hull <- habit_data %>%
+  group_by(habit) %>%
+  slice(chull(PC1, PC2))
+
+ggplot(habit_data, aes(x = PC1, y = PC2, col = habit, fill = habit)) +
+  geom_point(size = 4, alpha = 0.7) +
+  scale_color_manual(values = c("#007ba3", "#002397", "#92002e", "#868893", "#928600", "black")) +
+  #scale_fill_manual(values = c("#007ba3", "#002397", "#92002e", "#868893", "#928600", "black"), guide = "none") +
+  labs(x = "PC1 (36.2%)", y = "PC2 (16.9%)")+
+  geom_hline(yintercept = 0, linetype = 2, size = 0.5, col = "grey") +
+  geom_vline(xintercept = 0, linetype = 2, size = 0.5, col = "grey") +
+  theme_bw(base_size = 14) +
+  theme(legend.position = "none") +
+  coord_fixed(ratio = 1) +
+  theme(legend.position = c(0.88,0.76)) #+ 
+  #geom_polygon(data = hull, alpha = 0.2)
+
+ggsave(filename = "outputs/Linear/Figures/Figure3-legend.png", height = 9, width = 9)

@@ -46,7 +46,8 @@ plot_habit_PC12 <-
   geom_hline(yintercept = 0, linetype = 2, size = 0.5, col = "grey") +
   geom_vline(xintercept = 0, linetype = 2, size = 0.5, col = "grey") +
   theme_bw(base_size = 14) +
-  theme(legend.position = "none")
+  theme(legend.position = "none") +
+  coord_fixed(ratio = 1)
 
 plot_diet_PC12 <-
   ggplot(habit_data, aes(x = PC1, y = PC2, col = diet)) +
@@ -59,7 +60,8 @@ plot_diet_PC12 <-
   geom_hline(yintercept = 0, linetype = 2, size = 0.5, col = "grey") +
   geom_vline(xintercept = 0, linetype = 2, size = 0.5, col = "grey") +
   theme_bw(base_size = 14) +
-  theme(legend.position = "none")
+  theme(legend.position = "none") +
+  coord_fixed(ratio = 1)
 
 #-----------------------------------------------------------------------
 # Plot trees with traits at the tips
@@ -110,10 +112,10 @@ newtree_diet <- make.simmap(tree, diet_col, model = "SYM", nsim = 1)
 
 # Plots
 phylomorphospace(newtree_habit, phendata[,21:22], label = "off", colors = cols_habit, 
-                 node.by.map = TRUE, cex = 16, xlab = "PC1 (36.2%)", ylab = "PC2 (16.9%)")
+                 node.by.map = TRUE, cex = 16, xlab = "PC1 (36.2%)", ylab = "PC2 (16.9%)", asp = TRUE)
 
 # Export manually phylomorphospace-ecomorph-LSR.png
 
 phylomorphospace(newtree_diet, phendata[,21:22], label = "off", colors = cols_diet, 
-                 node.by.map = TRUE, cex = 16, xlab = "PC1 (36.2%)", ylab = "PC2 (16.9%)")
+                 node.by.map = TRUE, cex = 16, xlab = "PC1 (36.2%)", ylab = "PC2 (16.9%)", asp = TRUE)
 # Export manually phylomorphospace-diet-LSR.png
