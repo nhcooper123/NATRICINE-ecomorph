@@ -1,3 +1,4 @@
+# Modified 2022
 #-----------------------------------------------------------------------
 # Code for the supplemental PCA figures GMM
 #-----------------------------------------------------------------------
@@ -79,8 +80,9 @@ plot_habit_PC12 <-
   ggplot(habit_data, aes(x = PC1, y = PC2, col = habit)) +
   geom_point(size = 4, alpha = 0.7) +
   scale_color_manual(values = c("#007ba3", "#002397", "#92002e", "#868893", "#928600", "black")) +
-  labs(x = "PC1 (67.0%)", y = "PC2 (14.5%)")+
+  labs(x = "PC1 (42.3%)", y = "PC2 (29.2%)")+
   geom_hline(yintercept = 0, linetype = 2, size = 0.5, col = "grey") +
+  geom_vline(xintercept = 0, linetype = 2, size = 0.5, col = "grey") +
   theme_bw(base_size = 14) +
   theme(legend.position = "none") +
   coord_fixed(ratio = 1)
@@ -89,7 +91,7 @@ plot_habit_PC23 <-
   ggplot(habit_data, aes(x = PC2, y = PC3, col = habit)) +
   geom_point(size = 4, alpha = 0.7) +
   scale_color_manual(values = c("#007ba3", "#002397", "#92002e", "#868893", "#928600", "black")) +
-  labs(x = "PC2 (14.5%)", y = "PC3 (5.53%)") +
+  labs(x = "PC2 (29.2%)", y = "PC3 (8.35%)") +
   theme(legend.position = 'bottom', 
         legend.title = element_blank(),
         legend.text = element_text(face = 'italic')) +
@@ -101,9 +103,9 @@ plot_habit_PC23 <-
 
 plot_diet_PC12 <-
   ggplot(diet_data, aes(x = PC1, y = PC2, col = diet)) +
-  geom_point(size = 2, alpha = 0.7) +
+  geom_point(size = 4, alpha = 0.7) +
   scale_color_manual(values = c("#007ba3", "#002397", "#92002e", "#868893", "#928600", "tan1", "yellow", "deeppink", "black")) +
-  labs(x = "PC1 (67.0%)", y = "PC2 (14.5%)") +
+  labs(x = "PC1 (42.3%)", y = "PC2 (29.2%)") +
   theme(legend.position = 'bottom', 
         legend.title = element_blank(),
         legend.text = element_text(face = 'italic')) +
@@ -115,9 +117,9 @@ plot_diet_PC12 <-
 
 plot_diet_PC23 <-
   ggplot(diet_data, aes(x = PC2, y = PC3, col = diet)) +
-  geom_point(size = 2, alpha = 0.7) +
+  geom_point(size = 4, alpha = 0.7) +
   scale_color_manual(values = c("#007ba3", "#002397", "#92002e", "#868893", "#928600", "tan1", "yellow", "deeppink", "black")) +
-  labs(x = "PC2 (14.5%)", y = "PC3 (5.53%)")+
+  labs(x = "PC2 (29.2%)", y = "PC3 (8.35%)")+
   theme(legend.position = 'bottom', 
         legend.title = element_blank(),
         legend.text = element_text(face = 'italic')) +

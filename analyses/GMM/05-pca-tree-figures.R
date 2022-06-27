@@ -40,7 +40,7 @@ plot_habit_PC12 <-
   ggplot(habit_data, aes(x = PC1, y = PC2, col = ecomorph)) +
   geom_point(size = 2, alpha = 0.7) +
   scale_color_manual(values = habit_colours) +
-  labs(x = "PC1 (42.4%)", y = "PC2 (29.1%)")+
+  labs(x = "PC1 (42.3%)", y = "PC2 (29.2%)")+
   geom_hline(yintercept = 0, linetype = 2, size = 0.5, col = "grey") +
   geom_vline(xintercept = 0, linetype = 2, size = 0.5, col = "grey") +
   theme_bw(base_size = 14) +
@@ -51,7 +51,7 @@ plot_diet_PC12 <-
   ggplot(habit_data, aes(x = PC1, y = PC2, col = diet)) +
   geom_point(size = 2, alpha = 0.7) +
   scale_color_manual(values = diet_colours) +
-  labs(x = "PC1 (42.4%)", y = "PC2 (29.1%)") +
+  labs(x = "PC1 (42.3%)", y = "PC2 (29.2%)") +
   theme(legend.position = 'bottom', 
         legend.title = element_blank(),
         legend.text = element_text(face = 'italic')) +
@@ -74,7 +74,7 @@ diet <- habit_data %>% select(diet)
 # Plot habit tree
 tree1 <- 
   gheatmap(tree_base, habit, offset = 0, width =.1, colnames = FALSE) +
-  scale_fill_manual(values = habit_colours, name = "ecomorph", guide = guide_legend(order = 1))
+  scale_fill_manual(values = habit_colours, name = "habit", guide = guide_legend(order = 1))
 
 # Plot diet tree
 tree2 <- 
