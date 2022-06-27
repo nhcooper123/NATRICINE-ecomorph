@@ -1,28 +1,25 @@
+# Modified 2022
 #-----------------------------------------------------------------------
-#  ANOVAs and MANOVAs for different categories of habit and diet
+#  MANOVAs for different categories of habit and diet
 #-----------------------------------------------------------------------
 # Load libraries
 library(tidyverse)
-library(broom)
+library(mvMORPH)
+library(geiger)
 
-# Fitting ANOVAs function
-fit.anova <- function(pc, data, grouping.var) {
-  pc_ <- pull(data, pc)
-  grouping.var_ <- pull(data, grouping.var)
-  model <- lm(pc_ ~ grouping.var_, data = data)
-  out <- tidy(anova(model))
-  return(out)
-}
 #-----------------------------------------------------------------------
 # Read in data and wrangle it
 #-----------------------------------------------------------------------
-pc_data <- read_csv("data/Linear/snakepca.csv")
+pc_data <- read_csv("data/Linear/snakepca-LSR.csv")
+
+# Read in the tree
+tree <- read.nexus("data/Linear/new_datedtree-LM.nexus")
 
 # Remove habits that are unknown
 pc_data_habit <- 
   pc_data %>%
   filter(Habit != "Unknown") %>%
-  rename(ecomorph = Habit)
+  rename(habit = Habit)
 
 # Remove diet that are unknown *note the no caps "U"
 pc_data_diet <- 
@@ -30,94 +27,45 @@ pc_data_diet <-
   filter(Diet != "unknown") %>%
   rename(diet = Diet)
 
-# Numbers in each analyses
-length(unique(pc_data$Species))
-length(unique(pc_data_habit$Species))
-length(unique(pc_data_diet$Species))
+# Extract from the tree only those species which match with the data
+sps <- name.check(tree, pc_data_habit, data.names = pc_data_habit$Species)
+tree_habit <- drop.tip(tree, sps$tree_not_data)
+
+sps2 <- name.check(tree, pc_data_diet, data.names = pc_data_diet$Species)
+tree_diet <- drop.tip(tree, sps2$tree_not_data)
+
+# Extract from the data species not in the tree
+matches <- match(pc_data_habit$Species, sps$data_not_tree, nomatch = 0)
+pc_data_habit <- pc_data_habit[which(matches == 0), ]
+rownames(pc_data_habit) <- pc_data_habit$Species
+
+matches2 <- match(pc_data_diet$Species, sps2$data_not_tree, nomatch = 0)
+pc_data_diet <- pc_data_diet[which(matches2 == 0), ]
+rownames(pc_data_diet) <- pc_data_diet$Species
 
 #-----------------------------------------------------------------------
-# Manova on PC scores 1-7 (these make up 95% variance in head shape)
+# PGLS + MANOVA on PCs
 #-----------------------------------------------------------------------
 # Habit
-model1 <- manova(as.matrix(pc_data_habit[, 27:33]) ~ ecomorph, data = pc_data_habit)
-# Look at overall model significance
-anova(model1)
+# FitGLS model
+model1 <- mvgls(as.matrix(pc_data_habit[, 21:35]) ~ habit, data = pc_data_habit, tree = tree_habit, 
+                model = "BM", method = "LOO")
+# Test using permutations
+model1_test <- manova.gls(model1, nperm = 1000, test = "Pillai")
+model1_test
 
 # Diet
-model2 <- manova(as.matrix(pc_data_diet[, 27:33]) ~ diet, data = pc_data_diet)
-# Look at overall model significance
-anova(model2)
+# FitGLS model
+model2 <- mvgls(as.matrix(pc_data_diet[, 21:35]) ~ diet, data = pc_data_diet, tree = tree_diet, 
+                model = "BM", method = "LOO")
+# Test using permutations
+model2_test <- manova.gls(model2, nperm = 1000, test = "Pillai")
+model2_test
 
 # Habit & diet 
-model3 <- manova(as.matrix(pc_data_diet[, 27:33]) ~ Habit*diet, data = pc_data_diet)
-# Look at overall model significance
-anova(model3)
-
-#-----------------------------------------------------------------------
-# ANOVAs on individual PCs
-#-----------------------------------------------------------------------
-# Example for one model
-# Fit model
-modela <- lm(PC1 ~ ecomorph, data = pc_data_habit)
-# Check diagnostics
-par(mfrow = c(2,2))
-plot(modela)
-par(mfrow = c(1,1))
-# Look at overall result, i.e. is PC1 correlated with Habit?
-anova(modela)
-# Look at differences across Habit groups
-summary(modela)
-
-#--------------------------------------------------------------------------
-# ANOVAs for each individual PC can be automated with the code below
-#--------------------------------------------------------------------------
-# List names of first 7 PCs
-pc_list_habit <- names(pc_data_habit)[27:33]
-
-# Create an output file
-output <- data.frame(array(dim = c(7, 5)))
-names(output) <- c("PC", "df1", "df2", "F", "p")
-
-# Run ANOVAs
-for (i in seq_along(pc_list_habit)){
-  pc <- pc_list_habit[i]
-  x <- fit.anova(pc, pc_data_habit, "ecomorph")
-  output[i, "PC"] <- pc_list_habit[i]
-  output[i, "df1"] <- x$df[1]
-  output[i, "df2"] <- x$df[2]
-  output[i, "F"] <- x$statistic[1]
-  output[i, "p"] <- x$p.value[1]
-}
-
-# Add Bonferonni correction to p values
-output$p_bonferonni <- p.adjust(output$p, method = "bonferroni")
-
-# Write results out
-# write_csv(output, file = "outputs/Linear/Tables/ANOVA-results-ecomorph-LM.csv") 
-
-#--------------------------------------------
-# Fit ANOVAs for each individual PC diet 
-#--------------------------------------------
-# List names of first 7 PCs
-pc_list_diet <- names(pc_data_diet)[27:33]
-
-# Create an output file
-output <- data.frame(array(dim = c(7, 5)))
-names(output) <- c("PC", "df1", "df2", "F", "p")
-
-# Run ANOVAs
-for (i in seq_along(pc_list_diet)){
-  pc <- pc_list_diet[i]
-  x <- fit.anova(pc, pc_data_diet, "diet")
-  output[i, "PC"] <- pc_list_diet[i]
-  output[i, "df1"] <- x$df[1]
-  output[i, "df2"] <- x$df[2]
-  output[i, "F"] <- x$statistic[1]
-  output[i, "p"] <- x$p.value[1]
-}
-
-# Add Bonferonni correction to p values
-output$p_bonferonni <- p.adjust(output$p, method = "bonferroni")
-
-# Write results out
-# write_csv(output, file = "outputs/Linear/Tables/ANOVA-results-diet-LM.csv") 
+# FitGLS model
+model3 <- mvgls(as.matrix(pc_data_diet[, 21:35]) ~ Habit + diet, data = pc_data_diet, 
+                tree = tree_diet, model = "BM", method = "LOO")
+# Test using permutations
+model3_test <- manova.gls(model3, nperm = 1000, test = "Pillai")
+model3_test
