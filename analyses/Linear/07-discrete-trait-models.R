@@ -15,6 +15,11 @@ ds <-
   ds %>%
   mutate(Habit = as.factor(Habit))
 
+# Remove habits that are unknown
+ds <- 
+  ds %>%
+  filter(Habit != "Unknown")
+
 # Look at the data
 #head(ds)
 
