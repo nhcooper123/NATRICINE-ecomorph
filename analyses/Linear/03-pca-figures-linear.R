@@ -90,8 +90,7 @@ plot_habit_PC12 <-
   geom_hline(yintercept = 0, linetype = 2, size = 0.5, col = "grey") +
   geom_vline(xintercept = 0, linetype = 2, size = 0.5, col = "grey") +
   theme_bw(base_size = 14) +
-  theme(legend.position = "none") +
-  coord_fixed(ratio = 1)
+  theme(legend.position = "none")
 
 plot_habit_PC23 <-
   ggplot(habit_data, aes(x = PC2, y = PC3, col = habit)) +
@@ -103,8 +102,7 @@ plot_habit_PC23 <-
         legend.text = element_text(face = 'italic')) +
   geom_hline(yintercept = 0, linetype = 2, size = 0.5, col = "grey") +
   geom_vline(xintercept = 0, linetype = 2, size = 0.5, col = "grey") +
-  theme_bw(base_size = 14) +
-  coord_fixed(ratio = 1)
+  theme_bw(base_size = 14) 
 
 plot_diet_PC12 <-
   ggplot(diet_data, aes(x = PC1, y = PC2, col = diet)) +
@@ -117,8 +115,7 @@ plot_diet_PC12 <-
   geom_hline(yintercept = 0, linetype = 2, size = 0.5, col = "grey") +
   geom_vline(xintercept = 0, linetype = 2, size = 0.5, col = "grey") +
   theme_bw(base_size = 14) +
-  theme(legend.position = "none") +
-  coord_fixed(ratio = 1)
+  theme(legend.position = "none")
 
 plot_diet_PC23 <-
   ggplot(diet_data, aes(x = PC2, y = PC3, col = diet)) +
@@ -130,8 +127,7 @@ plot_diet_PC23 <-
         legend.text = element_text(face = 'italic')) +
   geom_hline(yintercept = 0, linetype = 2, size = 0.5, col = "grey") +
   geom_vline(xintercept = 0, linetype = 2, size = 0.5, col = "grey") +
-  theme_bw(base_size = 14) +
-  coord_fixed(ratio = 1)
+  theme_bw(base_size = 14)
 
 # Four panel plot
 (plot_habit_PC12 + plot_habit_PC23) / (plot_diet_PC12 + plot_diet_PC23)
