@@ -5,12 +5,9 @@
 # https://cran.r-project.org/web/packages/mvSLOUCH/vignettes/mvSLOUCH_Carnivorans.html
 #------------------------
 # Load libraries
-library(foreach)
-library(doParallel)
 library(mvSLOUCH)
 library(PCMBaseCpp)
 library(ape)
-library(rlist)
 library(phytools)
 library(tidyverse)
 library(geiger)
@@ -64,8 +61,8 @@ mytree <- drop.tip(tree, xx$tree_not_data)
 mydata <- filter(ds, !Species %in% xx$data_not_tree)
 
 # Check everything looks correct and numbers of species are matching
-# glimpse(ds2)
-# str(tree2)
+# glimpse(mydata)
+# str(mytree)
 
 # Subset data so it only contains the PCs and habit
 pcdata <- mydata[, c(2, 21:35)]
@@ -94,8 +91,12 @@ mvSLOUCH::phyltree_paths(scaled_tree)$tree_height
 # according to tree tip names:
 regimes <- pcdata$habit[order(match(row.names(pcdata), scaled_tree$tip.label))]
 
-# Run the parsimony reconstruction with deltran
-regimesD <- mvSLOUCH::fitch.mvsl(scaled_tree, regimes, deltran = TRUE)
+# Run the parsimony reconstruction with deltran and root = Terrestrial
+# Need to root or you get ambiguous nodes
+# Try three different root options
+regimesT <- mvSLOUCH::fitch.mvsl(scaled_tree, regimes, deltran = TRUE, root = "Terrestrial")
+regimesA <- mvSLOUCH::fitch.mvsl(scaled_tree, regimes, deltran = TRUE, root = "Aquatic")
+regimesSA <- mvSLOUCH::fitch.mvsl(scaled_tree, regimes, deltran = TRUE, root = "Semiaquatic")
 
 # Make pcdata (minus habit) into a matrix
 mvData <- data.matrix(pcdata[,-1])
@@ -120,10 +121,16 @@ mvStree <- mvSLOUCH::phyltree_paths(mytree)
 ### Brownian motion
 fitBM <- mvSLOUCH::BrownianMotionModel(mvStree, mvData[, 1:10])
 
-## Check model reached a peak
-checkBM <- mvSLOUCH::estimate.evolutionary.model(mvStree, mvData[, 1:10], 
-                                                 repeats = 5, model.setups = "basic", doPrint = TRUE)
-checkBM$BestModel$model
+# Get AICc
+fitBM$ParamSummary$aic.c 
+
+# Get degrees of freedom
+fitBM$ParamSummary$dof
+
+# Information for supplemental info
+# fitBM$ParamsInModel$vX0
+# fitBM$ParamsInModel$Sxx
+# fitBM$ParamSummary$StS
 
 #--------------------------------------------------------------
 ### Single optimum OU
@@ -132,10 +139,21 @@ fitOU <- mvSLOUCH::ouchModel(mvStree, mvData[, 1:10])
 ## Check model reached a peak
 checkOU <- mvSLOUCH::estimate.evolutionary.model(mvStree, mvData[, 1:10], 
                                                  repeats = 5, model.setups = "basic", doPrint = TRUE)
+# Which is the best? 
 checkOU$BestModel$model
 
-checkOU$BestModel$BestModel$ParamSummary$phyl.halflife$halflives
-currently called OU1
+# Get AICc
+checkOU$BestModel$ParamSummary$aic.c 
+
+# Get degrees of freedom
+checkOU$BestModel$ParamSummary$dof
+
+# Info for supplemental
+# checkOU$BestModel$ParamsInModel$vY0
+# checkOU$BestModel$ParamsInModel$A
+# checkOU$BestModel$ParamsInModel$Syy
+# checkOU$BestModel$ParamsInModel$mPsi
+# checkOU$BestModel$ParamSummary$confidence.interval$regression.summary$mPsi.regression.confidence.interval
 #--------------------------------------------------------------
 ### Multi-rate Brownian motion models (BMS)
 # Not possible in mvSLOUCH
@@ -143,26 +161,45 @@ currently called OU1
 ### Multi-optima OU models (OUM) with constant alpha and sigma
 ### Multi-rate multi-optima OU motion models (OUMV)
 ### Multi-alpha multi-optima OU motion models (OUMA)
-fitOUM <- mvSLOUCH::ouchModel(mvStree, mvData[, 1:10],
-                                        regimes = regimesD$branch_regimes)
 
-## Check model reached a peak
-checkOUM <- mvSLOUCH::estimate.evolutionary.model(mvStree, mvData[, 1:10], 
+## Fit for each of three root choices
+fitOUM_T <- mvSLOUCH::ouchModel(mvStree, mvData[, 1:10],
+                                        regimes = regimesT$branch_regimes, root.regime = "Terrestrial")
+
+fitOUM_A <- mvSLOUCH::ouchModel(mvStree, mvData[, 1:10],
+                                regimes = regimesA$branch_regimes, root.regime = "Aquatic")
+
+fitOUM_SA <- mvSLOUCH::ouchModel(mvStree, mvData[, 1:10],
+                                regimes = regimesSA$branch_regimes, root.regime = "Semiaquatic")
+
+## Check models reached a peak
+checkOUM_T <- mvSLOUCH::estimate.evolutionary.model(mvStree, mvData[, 1:10], 
+                                                  regimes = regimesT$branch_regimes, root.regime = "Terrestrial",
                                                   repeats = 5, model.setups = "basic", doPrint = TRUE)
-checkOUM$BestModel$model
 
+checkOUM_A <- mvSLOUCH::estimate.evolutionary.model(mvStree, mvData[, 1:10], 
+                                                    regimes = regimesA$branch_regimes, root.regime = "Aquatic",
+                                                    repeats = 5, model.setups = "basic", doPrint = TRUE)
 
-#-----------------------------------------------------------------------
-# Looking at the results
-#-----------------------------------------------------------------------
-# Extract AICc scores from the models
-results <- c(AICc(fitBM), AICc(fitOU), AICc(fitBMS), AICc(fitOUM), AICc(fitOUMV))
+checkOUM_SA <- mvSLOUCH::estimate.evolutionary.model(mvStree, mvData[, 1:10], 
+                                                    regimes = regimesSA$branch_regimes, root.regime = "Semiaquatic",
+                                                    repeats = 5, model.setups = "basic", doPrint = TRUE)
 
-# Get aic weights
-aicw <- aicw(results)
+# Which is the best? 
+checkOUM_T$BestModel$model
+checkOUM_A$BestModel$model
+checkOUM_SA$BestModel$model
 
-# Look at the AIC weights to find the best fitting model
-aicw
+# What is the AICc for the best?
+checkOUM_T$BestModel$BestModel$ParamSummary$aic.c
+checkOUM_A$BestModel$BestModel$ParamSummary$aic.c
+checkOUM_SA$BestModel$BestModel$ParamSummary$aic.c
 
-# Look at parameters of best fitting model
-
+# Info for supplemental
+# checkOUM_T$BestModel$BestModel$ParamsInModel$vY0
+# checkOUM_T$BestModel$BestModel$ParamsInModel$A
+# checkOUM_T$BestModel$BestModel$ParamsInModel$Syy
+# checkOUM_T$BestModel$BestModel$ParamsInModel$mPsi
+# checkOUM_T$BestModel$BestModel$ParamSummary$confidence.interval$regression.summary$mPsi.regression.confidence.interval$Lower.end
+# checkOUM_T$BestModel$BestModel$ParamSummary$confidence.interval$regression.summary$mPsi.regression.confidence.interval$Estimated.Point
+# checkOUM_T$BestModel$BestModel$ParamSummary$confidence.interval$regression.summary$mPsi.regression.confidence.interval$Upper.end
