@@ -86,7 +86,7 @@ plot_habit_PC12 <-
   ggplot(habit_data, aes(x = PC1, y = PC2, col = habit)) +
   geom_point(size = 4, alpha = 0.7) +
   scale_color_manual(values = c("#007ba3", "#002397", "#92002e", "#868893", "#928600", "black")) +
-  labs(x = "PC1 (36.2%)", y = "PC2 (16.9%)")+
+  labs(x = "PC1 (36.4%)", y = "PC2 (16.8%)")+
   geom_hline(yintercept = 0, linetype = 2, size = 0.5, col = "grey") +
   geom_vline(xintercept = 0, linetype = 2, size = 0.5, col = "grey") +
   theme_bw(base_size = 14) +
@@ -97,7 +97,7 @@ plot_habit_PC23 <-
   ggplot(habit_data, aes(x = PC2, y = PC3, col = habit)) +
   geom_point(size = 4, alpha = 0.7) +
   scale_color_manual(values = c("#007ba3", "#002397", "#92002e", "#868893", "#928600", "black")) +
-  labs(x = "PC2 (16.9%)", y = "PC3 (15.5%)") +
+  labs(x = "PC2 (16.8%)", y = "PC3 (15.5%)") +
   theme(legend.position = 'bottom', 
         legend.title = element_blank(),
         legend.text = element_text(face = 'italic')) +
@@ -110,7 +110,7 @@ plot_diet_PC12 <-
   ggplot(diet_data, aes(x = PC1, y = PC2, col = diet)) +
   geom_point(size = 4, alpha = 0.7) +
   scale_color_manual(values = c("#007ba3", "#002397", "#92002e", "#868893", "#928600", "tan1", "yellow", "deeppink", "black")) +
-  labs(x = "PC1 (36.2%)", y = "PC2 (16.9%)") +
+  labs(x = "PC1 (36.4%)", y = "PC2 (16.8%)") +
   theme(legend.position = 'bottom', 
         legend.title = element_blank(),
         legend.text = element_text(face = 'italic')) +
@@ -124,7 +124,7 @@ plot_diet_PC23 <-
   ggplot(diet_data, aes(x = PC2, y = PC3, col = diet)) +
   geom_point(size = 4, alpha = 0.7) +
   scale_color_manual(values = c("#007ba3", "#002397", "#92002e", "#868893", "#928600", "tan1", "yellow", "deeppink", "black")) +
-  labs(x = "PC2 (16.9%)", y = "PC3 (15.5%)")+
+  labs(x = "PC2 (16.8%)", y = "PC3 (15.5%)")+
   theme(legend.position = 'bottom', 
         legend.title = element_blank(),
         legend.text = element_text(face = 'italic')) +
@@ -151,7 +151,7 @@ ggplot(habit_data, aes(x = PC1, y = PC2, col = habit, fill = habit)) +
   geom_point(size = 4, alpha = 0.7) +
   scale_color_manual(values = c("#007ba3", "#002397", "#92002e", "#868893", "#928600", "black")) +
   #scale_fill_manual(values = c("#007ba3", "#002397", "#92002e", "#868893", "#928600", "black"), guide = "none") +
-  labs(x = "PC1 (36.2%)", y = "PC2 (16.9%)")+
+  labs(x = "PC1 (36.4%)", y = "PC2 (16.8%)")+
   geom_hline(yintercept = 0, linetype = 2, size = 0.5, col = "grey") +
   geom_vline(xintercept = 0, linetype = 2, size = 0.5, col = "grey") +
   theme_bw(base_size = 14) +
