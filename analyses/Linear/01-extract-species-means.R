@@ -15,6 +15,9 @@ library(psych)
 # Includes 1346 individuals 206 taxa 
 ds <- read_csv("data/Linear/metadata-data-natricine-LM.csv")
 
+# Remove individual with measurement errors
+ds <- filter(ds, Voucher != "NHM1940.3.7.4")
+
 #----------------------------------------------
 # Get log10 shape ratios (LSR) for each specimen
 # Take species means of LSR
