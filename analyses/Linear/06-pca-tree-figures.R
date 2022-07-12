@@ -36,7 +36,7 @@ sps <- name.check(tree, habit_data, data.names = rownames(habit_data))
 tree <- drop.tip(tree, sps$tree_not_data)
 
 # Extract from the data species not in the tree
-matches <- match(snake$Species, sps$data_not_tree, nomatch = 0)
+matches <- match(data$Species, sps$data_not_tree, nomatch = 0)
 habit_data <- habit_data[which(matches == 0), ]
 
 #-----------------------------------------------------------------------
@@ -108,7 +108,7 @@ diet_col <- setNames(phendata$diet, phendata$Species)
 
 # Make simmaps
 newtree_habit <- make.simmap(tree, habit_col, model = "SYM", nsim = 1)
-newtree_diet <- make.simmap(tree, diet_col, model = "SYM", nsim = 1)
+#newtree_diet <- make.simmap(tree, diet_col, model = "SYM", nsim = 1)
 
 # Plots
 phylomorphospace(newtree_habit, phendata[,21:22], label = "off", colors = cols_habit, 
@@ -116,6 +116,6 @@ phylomorphospace(newtree_habit, phendata[,21:22], label = "off", colors = cols_h
 
 # Export manually phylomorphospace-ecomorph-LSR.png
 
-phylomorphospace(newtree_diet, phendata[,21:22], label = "off", colors = cols_diet, 
-                 node.by.map = TRUE, cex = 16, xlab = "PC1 (36.4%)", ylab = "PC2 (16.8%)", asp = TRUE)
+#phylomorphospace(newtree_diet, phendata[,21:22], label = "off", colors = cols_diet, 
+ #                node.by.map = TRUE, cex = 16, xlab = "PC1 (36.4%)", ylab = "PC2 (16.8%)", asp = TRUE)
 # Export manually phylomorphospace-diet-LSR.png
