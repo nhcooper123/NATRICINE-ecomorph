@@ -160,4 +160,4 @@ ggplot(habit_data, aes(x = PC1, y = PC2, col = habit, fill = habit)) +
   theme(legend.position = c(0.88,0.76)) #+ 
   #geom_polygon(data = hull, alpha = 0.2)
 
-ggsave(filename = "outputs/Linear/Figures/Figure3-legend.png", height = 9, width = 9)
+# ggsave(filename = "outputs/Linear/Figures/Figure3-legend.png", height = 9, width = 9)
