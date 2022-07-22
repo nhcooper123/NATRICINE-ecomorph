@@ -143,17 +143,16 @@ checkOU <- mvSLOUCH::estimate.evolutionary.model(mvStree, mvData[, 1:10],
 checkOU$BestModel$model
 
 # Get AICc
-checkOU$BestModel$ParamSummary$aic.c 
+checkOU$BestModel$aic.c 
 
 # Get degrees of freedom
-checkOU$BestModel$ParamSummary$dof
+checkOU$BestModel$BestModel$ParamSummary$dof
 
 # Info for supplemental
-# checkOU$BestModel$ParamsInModel$vY0
-# checkOU$BestModel$ParamsInModel$A
-# checkOU$BestModel$ParamsInModel$Syy
-# checkOU$BestModel$ParamsInModel$mPsi
-# checkOU$BestModel$ParamSummary$confidence.interval$regression.summary$mPsi.regression.confidence.interval
+# checkOU$BestModel$BestModel$ParamsInModel$vY0
+# checkOU$BestModel$BestModel$ParamsInModel$A
+# checkOU$BestModel$BestModel$ParamsInModel$Syy
+# checkOU$BestModel$BestModel$ParamSummary$phyl.halflife
 #--------------------------------------------------------------
 ### Multi-rate Brownian motion models (BMS)
 # Not possible in mvSLOUCH
@@ -164,13 +163,16 @@ checkOU$BestModel$ParamSummary$dof
 
 ## Fit for each of three root choices
 fitOUM_T <- mvSLOUCH::ouchModel(mvStree, mvData[, 1:10],
-                                        regimes = regimesT$branch_regimes, root.regime = "Terrestrial")
+                                        regimes = regimesT$branch_regimes, root.regime = "Terrestrial",
+                                Atype = "Diagonal")
 
 fitOUM_A <- mvSLOUCH::ouchModel(mvStree, mvData[, 1:10],
-                                regimes = regimesA$branch_regimes, root.regime = "Aquatic")
+                                regimes = regimesA$branch_regimes, root.regime = "Aquatic",
+                                Atype = "Diagonal")
 
 fitOUM_SA <- mvSLOUCH::ouchModel(mvStree, mvData[, 1:10],
-                                regimes = regimesSA$branch_regimes, root.regime = "Semiaquatic")
+                                regimes = regimesSA$branch_regimes, root.regime = "Semiaquatic",
+                                Atype = "Diagonal")
 
 ## Check models reached a peak
 checkOUM_T <- mvSLOUCH::estimate.evolutionary.model(mvStree, mvData[, 1:10], 
@@ -191,9 +193,14 @@ checkOUM_A$BestModel$model
 checkOUM_SA$BestModel$model
 
 # What is the AICc for the best?
-checkOUM_T$BestModel$BestModel$ParamSummary$aic.c
-checkOUM_A$BestModel$BestModel$ParamSummary$aic.c
-checkOUM_SA$BestModel$BestModel$ParamSummary$aic.c
+checkOUM_T$BestModel$BestModel$aic.c 
+checkOUM_A$BestModel$BestModel$aic.c 
+checkOUM_SA$BestModel$BestModel$aic.c 
+
+# Get degrees of freedom
+checkOUM_T$BestModel$BestModel$ParamSummary$dof
+checkOUM_A$BestModel$BestModel$ParamSummary$dof
+checkOUM_SA$BestModel$BestModel$ParamSummary$dof
 
 # Info for supplemental
 # checkOUM_T$BestModel$BestModel$ParamsInModel$vY0
@@ -203,3 +210,4 @@ checkOUM_SA$BestModel$BestModel$ParamSummary$aic.c
 # checkOUM_T$BestModel$BestModel$ParamSummary$confidence.interval$regression.summary$mPsi.regression.confidence.interval$Lower.end
 # checkOUM_T$BestModel$BestModel$ParamSummary$confidence.interval$regression.summary$mPsi.regression.confidence.interval$Estimated.Point
 # checkOUM_T$BestModel$BestModel$ParamSummary$confidence.interval$regression.summary$mPsi.regression.confidence.interval$Upper.end
+# checkOUM_T$BestModel$BestModel$ParamSummary$phyl.halflife
