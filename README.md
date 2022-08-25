@@ -14,7 +14,7 @@ To cite this repo:
 > Deepak. V., & Cooper, N. 2022. NATRICINE-ecomorph - code for the paper.
 
 
-![alt text](https://github.com/nhcooper123/natricine/raw/master/outputs/Linear/Figures/PCA-ecomorph-diet-trees.png)
+![alt text](https://github.com/nhcooper123/natricine/raw/master/outputs/Linear/Figures/PC123-ecomorph-diet-LM-LSR.png)
 
 ------
 
