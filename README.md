@@ -8,10 +8,10 @@ Author(s): V.Deepak and Natalie Cooper.
 This repository contains all the code and data used in the manuscript [Link to final published pdf will be here]().
 
 To cite the paper: 
-> 
+> Deepak. V., Gower, D.J. & Cooper, N. 2022. Diet and habit explain head-shape convergences in natricine snakes. TBC
 
 To cite this repo: 
-> 
+> Deepak. V., & Cooper, N. 2022. NATRICINE-ecomorph - code for the paper.
 
 
 ![alt text](https://github.com/nhcooper123/natricine/raw/master/outputs/Linear/Figures/PCA-ecomorph-diet-trees.png)
