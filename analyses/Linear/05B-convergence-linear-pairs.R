@@ -80,6 +80,6 @@ output[i, "C4"] <- x$ObservedCs[4]
 output[i, "pC4"] <- x$Pvals[4]
 
 # Write to file
-write_csv(output, file = "outputs/Linear/Tables/convevol-results-pairs.csv", append = TRUE) 
+write_csv(output, file = "outputs/Linear/Tables/convevol-results-pairs.csv") 
 
 }
