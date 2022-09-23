@@ -125,7 +125,7 @@ con1 <-
   geom_histogram(stat = "count") +
   facet_wrap(~Habit, ncol = 5, scales = "free_y") +
   theme_bw((base_size = 14))+
-  scale_fill_manual(values = c("darkgreen", "deeppink")) +
+  scale_fill_manual(values = c("darkgreen", "cornflowerblue")) +
   theme(strip.background = element_rect(fill = "white")) +
   scale_x_discrete(labels = c("no", "yes")) +
   theme(legend.position = "none") +
@@ -136,7 +136,7 @@ con2 <-
   geom_histogram(stat = "count") +
   facet_wrap(~Habit, ncol = 5, scales = "free_y") +
   theme_bw((base_size = 14))+
-  scale_fill_manual(values = c("darkgreen", "deeppink")) +
+  scale_fill_manual(values = c("darkgreen", "cornflowerblue")) +
   theme(strip.background = element_rect(fill = "white")) +
   scale_x_discrete(labels = c("no", "yes")) +
   theme(legend.position = "none") +
@@ -147,7 +147,7 @@ con3 <-
   geom_histogram(stat = "count") +
   facet_wrap(~Habit, ncol = 5, scales = "free_y") +
   theme_bw((base_size = 14))+
-  scale_fill_manual(values = c("darkgreen", "deeppink")) +
+  scale_fill_manual(values = c("darkgreen", "cornflowerblue")) +
   theme(strip.background = element_rect(fill = "white")) +
   scale_x_discrete(labels = c("no", "yes")) +
   theme(legend.position = "none") +
@@ -158,7 +158,7 @@ con4 <-
   geom_histogram(stat = "count") +
   facet_wrap(~Habit, ncol = 5, scales = "free_y") +
   theme_bw((base_size = 14)) +
-  scale_fill_manual(values = c("darkgreen", "deeppink")) +
+  scale_fill_manual(values = c("darkgreen", "cornflowerblue")) +
   theme(strip.background = element_rect(fill = "white")) +
   scale_x_discrete(labels = c("no", "yes")) +
   theme(legend.position = "none") +
@@ -175,7 +175,7 @@ all <-
   geom_histogram(stat = "count") +
   facet_wrap(~Habit, ncol = 5, scales = "free_y") +
   theme_bw((base_size = 14)) +
-  scale_fill_manual(values = c("darkgreen", "deeppink")) +
+  scale_fill_manual(values = c("darkgreen", "cornflowerblue")) +
   theme(strip.background = element_rect(fill = "white")) +
   scale_x_discrete(labels = c("no", "yes")) +
   theme(legend.position = "none") +
@@ -184,18 +184,20 @@ all <-
 # Plot them all
 con1/con2/con3/con4/all + plot_annotation(tag_levels = "A") 
 
-  
+#----------------------------------------------------
+# Stacked bars
+#----------------------------------------------------
+stackedds <- 
+  significant %>%
+  pivot_longer(cols = c(yes, no), names_to = "significant", values_to = "number") %>%
+  mutate(percent2 = number/N * 100) %>%
+  mutate(Habit = factor(Habit, levels = c("Aquatic", "Semiaquatic", "Aquatic Burrowing", "Burrowing", "Terrestrial")))
 
-
-ggplot(significant, aes(y = percent, x = Habit, fill = )) + 
+ggplot(stackedds, aes(y = percent2, x = Habit, fill = significant)) + 
   geom_col(alpha = 0.8) +
-  scale_fill_manual(values = cbPalette[c(3,5)]) +
+  scale_fill_manual(values = c("darkgreen", "cornflowerblue")) +
   coord_flip() +
   theme_bw(base_size = 14) +
-  ylab("coverage (%)") +
+  ylab("significantly convergent (%)") +
   theme(legend.position = "none") +
-  remove_y +
-  remove_x
-
-
-
+  xlab("")
