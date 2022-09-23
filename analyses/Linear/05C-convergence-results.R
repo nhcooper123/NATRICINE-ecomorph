@@ -199,5 +199,4 @@ ggplot(stackedds, aes(y = percent2, x = Habit, fill = significant)) +
   coord_flip() +
   theme_bw(base_size = 14) +
   ylab("significantly convergent (%)") +
-  theme(legend.position = "none") +
   xlab("")
