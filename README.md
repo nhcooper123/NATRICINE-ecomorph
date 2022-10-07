@@ -36,7 +36,10 @@ The main analyses from the paper are in the following scripts within the `analys
 -  *02-pca-linear-measurements.R*. This runs a PCA on the species level head shape variables, to produce the data (`snakepca.csv`) used in all analyses.
 -  *03-pca-figures-linear.R*. This creates the PC figures for the appendix.
 -  *04-MANOVA-linear.R*. This performs the MANOVAs of head shape versus ecomorph and diet.
--  *05-convergence-linear.R*. This looks for head shape convergence in ecomorphs using C1-C4 metrics. Note that this code takes a very long time to run, i.e. days-weeks for some groups.       
+-  *05A-habit-ace.R*. This runs an ancestral state estimation used to determine putatively convergent pairs of independently evolving taxa.
+-  *05B-convergence-linear-pairs.R*. This runs the convergence analyses on the putatively convergent pairs.
+-  *05C-convergence-results.R*. This collates the results from 5B and makes summaries and figures.
+-  *05-convergence-linear*. This looks for head shape convergence in ecomorphs using C1-C4 metrics for each habit group. Note that this code takes a very long time to run, i.e. days-weeks for some groups. No longer used in the paper but left in the repo for interest.    
 -  *06-pca-tree-figures.R*. This creates the PCs and phylogeny plot for the paper.
 -  *07-discrete-trait-models.R*. This estimates the best model of trait evolution for ecomorph.
 -  *08-mvSLOUCH-models.R*. This fits the more complex evolutionary models.
