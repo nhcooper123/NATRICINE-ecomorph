@@ -1,7 +1,5 @@
 # NATRICINE-ecomorph
-Code for head shape convergence paper from V.Deepak's NATRICINE MSCA project
-
-*This README is a work in progress...*
+Code for head shape convergence paper from V.Deepak's NATRICINE MSCA project.
 
 Author(s): V.Deepak and Natalie Cooper.
 
@@ -33,16 +31,16 @@ All code used to run analyses and make figures is included in the `analyses/` fo
 The main analyses from the paper are in the following scripts within the `analyses/Linear` folder.
 
 -  *00-add-missing-tips-to-tree.R*. This takes the dated tree and adds additional taxa to it to create the tree (`new_datedtree-LM.nexus`) used in the analyses.
--  *01-extract-species-means.R*. This takes the raw specimen level data, size corrects them using log shape ratios, and then extracts species mean values.     
+-  *01-extract-species-means.R*. This takes the raw specimen level data, size corrects them using log shape ratios, and then extracts species mean values.    
 -  *02-pca-linear-measurements.R*. This runs a PCA on the species level head shape variables, to produce the data (`snakepca.csv`) used in all analyses.
 -  *03-pca-figures-linear.R*. This creates the PC figures for the appendix.
 -  *04-MANOVA-linear.R*. This performs the MANOVAs of head shape versus putative ecomorph and diet.
--  *05-convergence-linear.R*. This looks for head shape convergence in putative ecomorphs using C1-C4 metrics. Note that this code takes a very long time to run, i.e. days-weeks for some groups. Original code from v1 of the paper. In the published version thsi is replaced by code in 5A, 5B and 5C.
--  *05A-habit-ace.R*. This estimates ancestral states for habit/putative ecomorph across the phylogeny, for use in script 5B.
+-  *05-convergence-linear.R*. This looks for head shape convergence in putative ecomorphs using C1-C4 metrics. Note that this code takes a very long time to run, i.e. days-weeks for some groups. Original code from v1 of the paper. No longer used in the paper but left in the repo for interest. In the published version this is replaced by code in 5A, 5B and 5C.
+-  *05A-habit-ace.R*. This runs an ancestral state estimation used to determine putatively convergent pairs of independently evolving taxa, for use in script 5B.
 -  *05B-convergence-linear-pairs.R*. This looks for head shape convergence in putative ecomorphs using C1-C4 metrics. Metrics are calculated for each pair of taxa that have independently evolved the same putative ecomorph. Takes around a week to run.
--  *05C-convergence-results.R*. Summarises the results outputs from 5B.
--  *06-pca-tree-figures.R*. This creates the PCs and phylogeny plots, and phylomorphospace plots for the paper.
--  *07-discrete-trait-models.R*. This estimates the best model of trait evolution for putative ecomorph.
+-  *05C-convergence-results.R*. This collates the results from 5B and makes summaries and figures.
+-  *06-pca-tree-figures.R*. This creates the PCs and phylogeny plot, and phylomorphospace plots for the paper.
+-  *07-discrete-trait-models.R*. This estimates the best model of trait evolution for putative ecomorphs.
 -  *08-mvSLOUCH-models.R*. This fits the more complex evolutionary models.
 
 We also repeated these analyses using landmarks that represent the head shape of the snakes. These analyses are found in the `analyses/GMM` folder.
