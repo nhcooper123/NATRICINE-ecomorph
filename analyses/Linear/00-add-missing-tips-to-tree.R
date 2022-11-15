@@ -69,7 +69,7 @@ tree$tip.label <- str_remove_all(tree$tip.label, "[\']")
 # Read in data to add
 # This has species names ("binomial"), the tip to add the 
 # species to ("relative") and the branch length ("branch")
-data.to.add <- read.csv("data/missing_taxa_data.csv") 
+data.to.add <- read.csv("data/Linear/missing_taxa_data.csv") 
 
 # Add missing species to the tree
 new_tree<- AddAllSpeciesToTree(tree, data.to.add, "binomial", 
