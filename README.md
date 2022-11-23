@@ -23,6 +23,9 @@ All data needed to run the analyses are in the `data/` folder. These are in two 
 
 > Deepak V, Cooper N, Gower DJ. 2020. Dataset: NATRICINE. Natural History Museum Data Portal (data.nhm.ac.uk). https://doi.org/10.5519/0070625.
 
+Raw data for linear measurements analyses are in `metadata-data-natricine-LM.csv`. Raw landmark data for GMM analyses are in `
+natricine_landmarks.TPS`.
+
 ------
 ## Analyses
 All code used to run analyses and make figures is included in the `analyses/` folder. Before starting remember to open an RStudio project from that folder. Most code was written by V Deepak, and modified by Natalie Cooper.
